@@ -1,0 +1,192 @@
+@import "../../_variables.scss";
+
+.Common-section {
+  @extend .Sub-common;
+  align-items: center;
+  justify-content: center;
+  background: $main-green;
+  color: $white-text;
+  font-size: $base-rem * 1.7;
+  font-weight: bold;
+}
+
+.Sub-common {
+  display: flex;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+}
+
+.CommList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $base-rem * 1.4;
+  color: $gray-text;
+}
+
+.SharedGrid {
+  width: $base-percent * 100;
+  grid-template-columns: $base-percent * 38.5 $base-percent * 18.3 $base-percent * 21.4 1fr;
+  grid-template-areas: "L F S R";
+}
+
+.SupraContainer {
+  display: grid;
+  width: 100%;
+  height: $base-percent * 100;
+  min-height: 624px;
+  grid-template-columns: 60.5% 1fr;
+  grid-template-areas: "M B";
+
+  .ContainerButtons {
+    display: grid;
+    grid-area: B;
+    width: 100%;
+    min-height: 592px;
+    height: 592px;
+    grid-template-rows: $base-percent * 80 1fr;
+    grid-template-areas:
+      "CH"
+      "BU";
+
+    .Changer {
+      display: flex;
+      grid-area: CH;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .Buttons {
+      grid-area: BU;
+      display: grid;
+      overflow: hidden;
+      height: 130px;
+      width: $base-percent * 100;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-rows: $base-percent * 5 1fr;
+      grid-template-areas:
+        ". . ."
+        "M C E";
+
+      .Exit {
+        grid-area: E;
+      }
+
+      .Charge {
+        grid-area: C;
+        margin-left: 3rem;
+      }
+
+      .Monitor {
+        grid-area: M;
+        margin-left: 7rem;
+      }
+    }
+  }
+
+  .Positionator {
+    grid-area: M;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: $base-percent * 4.4 1fr;
+    grid-template-areas: ". C";
+
+    .Container {
+      grid-area: C;
+      @extend .Sub-common;
+      min-height: 592px;
+      height: 592px;
+      width: 100%;
+      border-top-right-radius: $table-status-radius;
+      border-top-left-radius: $table-status-radius;
+      background: $frame-card;
+      flex-direction: column;
+
+      .Headers {
+        display: grid;
+        grid-gap: 3px;
+        height: $base-percent * 14.5;
+        @extend .SharedGrid;
+
+        .LeftCorner {
+          grid-area: L;
+          border-top-left-radius: $table-status-radius;
+          @extend .Common-section;
+        }
+
+        .FirstPiece {
+          grid-area: F;
+          @extend .Common-section;
+        }
+
+        .SecondPiece {
+          grid-area: S;
+          @extend .Common-section;
+        }
+
+        .RightCorner {
+          grid-area: R;
+          border-top-right-radius: $table-status-radius;
+          text-align: center;
+          @extend .Common-section;
+        }
+      }
+
+      .Lists {
+        display: grid;
+        overflow: auto;
+        height: $base-percent * 55;
+        width: $base-percent * 100;
+      }
+
+      .ContRow {
+        display: grid;
+        height: 64px;
+        @extend .SharedGrid;
+
+        .Description {
+          grid-area: L;
+          @extend .CommList;
+          justify-content: left;
+
+          .Descrip {
+            margin-left: $base-rem * 3;
+          }
+        }
+
+        .Quantity {
+          grid-area: F;
+          @extend .CommList;
+        }
+
+        .Price {
+          grid-area: S;
+          @extend .CommList;
+        }
+
+        .TotalPrice {
+          grid-area: T;
+          @extend .CommList;
+        }
+
+        .Status {
+          grid-area: R;
+          @extend .CommList;
+        }
+      }
+
+      .Totals {
+        display: flex;
+        min-height: 93px;
+        height: $base-percent * 15;
+        align-items: center;
+
+        .MultiCont {
+          margin-top: 3.5rem;
+          height: $base-rem * 2.4;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}

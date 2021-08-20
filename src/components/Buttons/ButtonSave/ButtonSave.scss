@@ -1,0 +1,49 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.TextConf {
+  font-size: 0.85rem;
+  color: $font-icon-text;
+  position: relative;
+  font-weight: bold;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.BtnSave {
+  @extend .GridCommons;
+  font-size: 2.5rem;
+  text-align: center;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "I"
+    "."
+    "T";
+
+  &:hover > .IconSave,
+  &:active {
+    filter: brightness($base-percent * 110);
+    cursor: pointer;
+  }
+
+  .IconSave {
+    @extend .SubGrid;
+    grid-area: I;
+    color: $main-green;
+    transform: rotate(90deg);
+  }
+
+  .Text {
+    @extend .SubGrid;
+    @extend .TextConf;
+    display: flex;
+    grid-area: T;
+  }
+}

@@ -1,0 +1,122 @@
+@import "../../_variables.scss";
+
+.Measures {
+  width: 100%;
+  height: 100%;
+}
+
+.TopBarContainer {
+  @extend .Measures;
+  display: grid;
+  color: $gray-text;
+  font-size: 1.4rem;
+  font-weight: bold;
+  grid-template-columns: 3.9% 57.8% 9.35% 25.1% 1fr;
+  grid-template-areas: ". LC . RC .";
+
+  .LeftHeaferContainer {
+    @extend .Measures;
+    grid-area: LC;
+    display: grid;
+    grid-column-gap: 0.6rem;
+    grid-template-columns: 14.6% 30% 9.5% 4% 10.5% 1fr;
+    grid-template-rows: 44% 1fr;
+    grid-template-areas:
+      ". . . . . ."
+      "FT FD ST SD TT TD";
+
+    .FirstTitle {
+      @extend .Measures;
+      grid-area: FT;
+    }
+
+    .FirstData {
+      @extend .Measures;
+      grid-area: FD;
+    }
+
+    .SecondTitle {
+      @extend .Measures;
+      grid-area: ST;
+    }
+
+    .SecondData {
+      @extend .Measures;
+      grid-area: SD;
+    }
+
+    .ThirdTitle {
+      @extend .Measures;
+      grid-area: TT;
+    }
+
+    .ThirdData {
+      @extend .Measures;
+      grid-area: TD;
+      display: flex;
+      min-width: 120%;
+      align-items: flex-start;
+    }
+  }
+
+  .RightHeaderContainer {
+    @extend .Measures;
+    grid-area: RC;
+    display: grid;
+    grid-column-gap: 0.4rem;
+    grid-template-rows: 30% 27.5% 1fr;
+    grid-template-areas:
+      "."
+      "T"
+      "B";
+
+    .TopContainer {
+      grid-area: T;
+      @extend .Measures;
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      grid-template-areas: "FT ST";
+
+      .FirstTop {
+        @extend .Measures;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: FT;
+        font-size: 1.3rem;
+        text-align: left;
+      }
+
+      .SecondTop {
+        @extend .Measures;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        grid-area: ST;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+    }
+
+    .BottomContainer {
+      grid-area: B;
+      @extend .Measures;
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      grid-template-areas: "FB SB";
+
+      .FirstBottom {
+        @extend .Measures;
+        grid-area: FB;
+        font-size: 1.3rem;
+      }
+
+      .SecondBottom {
+        @extend .Measures;
+        grid-area: SB;
+        text-align: center;
+        text-align: right;
+      }
+    }
+  }
+}

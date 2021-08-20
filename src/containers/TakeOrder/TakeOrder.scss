@@ -1,0 +1,81 @@
+@import "../../_variables.scss";
+
+.OrderContainer {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  background: $frame-background;
+  grid-template-rows: 14.5% 62.8% 1fr;
+  grid-template-areas:
+    "CA"
+    "OR"
+    "CO";
+
+  .Category {
+    display: grid;
+    grid-area: CA;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    background: $frame-card;
+    color: $gray-text;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-areas: ". CS .";
+
+    .CategorySpot {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      grid-area: CS;
+      text-align: center;
+      grid-template-rows: 36% 33.33% 1fr;
+      grid-template-areas:
+        "."
+        "AT"
+        "BO";
+
+      .CatActualText {
+        grid-area: AT;
+        height: 100%;
+        width: 100%;
+      }
+
+      .CategoryBorderContainer {
+        display: grid;
+        grid-area: BO;
+        min-height: 100%;
+        width: 100%;
+        grid-template-columns: 36% 1fr 36%;
+        grid-template-areas: ". LI .";
+
+        .CatLine {
+          grid-area: LI;
+          width: 100%;
+          height: 100%;
+          border-bottom: 3px solid $gray-text;
+        }
+      }
+    }
+  }
+
+  .Catalog {
+    overflow-y: auto;
+    display: flex;
+    grid-area: OR;
+    min-height: 392px;
+    width: 100%;
+    height: 392px;
+    padding-left: 0.7rem;
+    background: $frame-card;
+  }
+
+  .OrderControl {
+    grid-area: CO;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+  }
+}

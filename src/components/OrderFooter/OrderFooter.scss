@@ -1,0 +1,106 @@
+@import "../../_variables.scss";
+
+.OrderControl {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 20% 50% 1fr;
+  grid-template-areas: "BC LO MB";
+
+  .ButtonOrderContainer {
+    display: grid;
+    grid-area: BC;
+    width: 100%;
+    height: 100%;
+    background: $frame-background;
+    grid-template-columns: 30% 19% 1fr;
+    grid-template-rows: 25% 42% 3.1% 1fr;
+    grid-template-areas:
+      ". . ."
+      ". AC ."
+      ". . ."
+      ". BT .";
+
+    .ActualButton {
+      grid-area: AC;
+      color: $main-green;
+      font-size: 3.5rem;
+
+      &:hover {
+        filter: brightness($base-percent * 110);
+        cursor: pointer;
+      }
+    }
+
+    .ButtonText {
+      grid-area: BT;
+      color: $gray-text;
+      margin-left: -0.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .ListOrderContainer {
+    grid-area: LO;
+    width: 100%;
+    max-height: 145px;
+    word-wrap: break-word;
+    overflow: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
+    background: $frame-background;
+  }
+
+  .MultiButtonsContainer {
+    display: grid;
+    grid-area: MB;
+    width: 100%;
+    height: 100%;
+    background: $frame-background;
+    grid-template-columns: 19.1% 11.8% 17% 11.8% 5.7% 1fr;
+    grid-template-rows: 6.5% 1fr;
+    grid-template-areas:
+      ". . . . . ."
+      "SE SE SE SE . EX";
+
+    .SearchButtonContainer {
+      display: flex;
+      grid-area: SE;
+      width: 100%;
+      height: 100px;
+      align-items: flex-end;
+
+      .TextBox {
+        font-family: "FontAwesome";
+        @extend .ConfBox;
+        width: 100%;
+        padding-left: 3px;
+        height: 25px;
+      }
+
+      .TextBox2 {
+        @extend .ConfBox;
+        width: 50px;
+        height: 25px;
+        padding: 0;
+        padding-left: 3px;
+        margin-right: 10px
+      }
+    }
+
+    .ExitButtonContainer {
+      grid-area: EX;
+      padding-top: 1.7rem;
+    }
+  }
+
+  .ConfBox {
+    background: $color-text;
+    outline: none;
+    border-style: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: $font-icon-text;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../../_variables.scss";
+
+.Button {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $base-percent * 100;
+  box-shadow: 0 0 3px #aaa;
+  color: $white-text;
+  font-size: $base-rem;
+  font-weight: bold;
+  &:hover,
+  &:active {
+    background: lighten($main-green, $bright) !important;
+    cursor: pointer;
+  }
+}

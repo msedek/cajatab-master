@@ -1,0 +1,109 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.Border {
+  border-right: 2px solid $inner-frame;
+  @extend .SubBorder;
+}
+
+.SubBorder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ContaineInventoryHeader {
+  @extend .GridCommons;
+  background: $main-green;
+  color: $font-white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  grid-template-columns: 22.3% 6.6% 6.6% 6.6% 6.6% 6.6% 7.1% 6.6% 7.2% 9.5% 1fr;
+  grid-template-areas: "DE CR MI MX UN IN CE CT MN OP OB";
+
+  .ZonaDescription {
+    @extend .SubGrid;
+    grid-area: DE;
+    @extend .Border;
+  }
+
+  .ZonaCrit1 {
+    @extend .SubGrid;
+    grid-area: CR;
+    @extend .Border;
+  }
+
+  .ZonaMin1 {
+    @extend .SubGrid;
+    grid-area: MI;
+    @extend .Border;
+  }
+
+  .ZonaMax {
+    @extend .SubGrid;
+    @extend .Border;
+  }
+
+  .ZonaUn {
+    @extend .SubGrid;
+    @extend .Border;
+  }
+
+  .ZonaInventory {
+    @extend .SubGrid;
+    grid-area: IN;
+    @extend .Border;
+  }
+
+  .ZonaZero {
+    @extend .SubGrid;
+    @extend .SubBorder;
+    padding-left: 0.3rem;
+    justify-content: left;
+    grid-area: CE;
+  }
+
+  .ZonaCrit2 {
+    @extend .SubGrid;
+    @extend .SubBorder;
+    grid-area: CT;
+
+    .Text {
+      padding-right: 2.5rem;
+    }
+  }
+
+  .ZonaMin2 {
+    @extend .SubGrid;
+    grid-area: MN;
+    @extend .SubBorder;
+  }
+
+  .ZonaOpt {
+    @extend .SubGrid;
+    grid-area: OP;
+    @extend .Border;
+
+    .Text {
+      padding-left: 2.2rem;
+    }
+  }
+
+  .ZonaObservation {
+    @extend .SubGrid;
+    grid-area: OB;
+    @extend .SubBorder;
+  }
+}

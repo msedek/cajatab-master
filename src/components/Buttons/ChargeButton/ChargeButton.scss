@@ -1,0 +1,38 @@
+@import "../../../_variables.scss";
+
+.Container {
+  display: grid;
+  height: $base-rem * 6;
+  width: $base-percent * 100;
+  grid: {
+    template-rows: $base-percent * 20 $base-percent * 40 1fr;
+    template-areas: "B" "." "T";
+  }
+  .Button:hover,
+  .Button:active {
+    color: lighten(#4c5663, $bright);
+    cursor: pointer;
+  }
+}
+
+.Button {
+  color: #4c5663;
+  text-align: center;
+  font-size: $base-rem * 3.1;
+  grid-area: B;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+  z-index: 1;
+}
+
+.Text {
+  grid-area: T;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+  color: $font-awesome-btext;
+  font: {
+    size: $base-rem * 1.1;
+    weight: bold;
+  }
+  text-align: center;
+}

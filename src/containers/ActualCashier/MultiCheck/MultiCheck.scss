@@ -1,0 +1,464 @@
+@import "../../../_variables.scss";
+
+
+input {
+  outline: none;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+  input[type='checkbox']:after {
+    width: 13px;
+    height: 13px;
+    top: -2px;
+    position: relative;
+    content: '';
+    display: inline-block;
+    background-color: $color-text;
+    visibility: visible;
+    border: 2px solid $font-awesome-icono;
+    border-radius: 2px;
+  }
+  
+  input[type='checkbox']:checked:after {
+    width: 13px;
+    height: 13px;
+    top: -2px;
+    position: relative;
+    content: '';
+    background-color: $font-awesome-icono;
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid $font-awesome-icono;
+    border-radius: 2px;
+  }
+
+
+.Container {
+  display: grid;
+  width: $base-percent * 100;
+  min-height: 500px;
+  height: 500px;
+  grid-template-columns: 6% 1fr 15.5%;
+  grid-template-rows: 2% 1fr 6% 4% 4% 4% 4% 1% 6%;
+  grid-template-areas:
+    ". . ."
+    ". LI ."
+    ". TD ."
+    ". RU ."
+    ". NO ."
+    ". DI ."
+    ". EC ."
+    ". . ."
+    ". BU .";
+
+  .ListContainer {
+    grid-area: LI;
+    overflow: hidden;
+    display: grid;
+    width: 100%;
+    height: 345px;
+    min-height: 345px;
+    background: $calc-screen;
+    border-radius: 7px;
+    grid-template-columns: 2% 1fr 5%;
+    grid-template-rows: 11% 1% 45% 1fr;
+    grid-template-areas:
+      "TI TI TI"
+      ". B ."
+      "CO CO CO"
+      "TO TO TO";
+
+    .BreakLine {
+      grid-area: B;
+      border: 1px solid $secundary-green;
+      margin-bottom: 15px;
+    }
+
+    .Title {
+      display: grid;
+      grid-area: TI;
+      min-height: 40px;
+      height: 40px;
+      width: 100%;
+      font-weight: bold;
+      color: $gray-text;
+      grid-template-rows: 35% 1fr 1fr;
+      grid-template-columns: 5% 1fr 5%;
+      grid-template-areas:
+        ". . ."
+        ". C ."
+        ". . .";
+
+      .NumCuenta {
+        grid-area: C;
+        margin-bottom: 6px;
+      }
+    }
+
+    .Content {
+      display: grid;
+      overflow: auto;
+      min-height: 145px;
+      width: 100%;
+      height: 100%;
+      grid-area: CO;
+      color: $gray-text;
+      grid-template-columns: 2% 1fr 5%;
+      grid-template-areas: ". C .";
+
+      .TableContent {
+        grid-area: C;
+      }
+    }
+
+    .Totals {
+      display: grid;
+      grid-area: TO;
+      color: $white-text;
+      font-weight: bold;
+      min-height: 145px;
+      height: 100%;
+      font-size: 0.9rem;
+      background: $secundary-green;
+      grid-template-columns: 59% 1fr 18%;
+      grid-template-rows: 2.6% 11.80% 11.80% 11.80% 11.80% 11.80% 11.80% 11.80% 1fr;
+      grid-template-areas:
+        ". . ."
+        "T TSO P"
+        "DT DSO DP"
+        "DTG DSG DPG"
+        "IT ISO IP"
+        "EXT ESO EXP"
+        "RT RSO RP"
+        "IGT IGSO IGP"
+        "MT MSO MP";
+
+      .TotalLabel {
+        grid-area: T;
+        margin-left: 0.4rem;
+      }
+
+      .TotalSol {
+        grid-area: TSO;
+      }
+
+      .TotalPrice {
+        grid-area: P;
+      }
+
+      .DsctoLabel {
+        grid-area: DT;
+        margin-left: 0.4rem;
+      }
+
+      .DsctoSol {
+        grid-area: DSO;
+      }
+
+      .DsctoPrice {
+        grid-area: DP;
+      }
+
+      .GratuitaLabel {
+        grid-area: DTG;
+        margin-left: 0.4rem;
+      }
+
+      .GratuitaSol {
+        grid-area: DSG;
+      }
+
+      .GratuitaPrice {
+        grid-area: DPG;
+      }
+
+      .InafectaLabel {
+        grid-area: IT;
+        margin-left: 0.4rem;
+      }
+
+      .InafectaSol {
+        grid-area: ISO;
+      }
+
+      .InafectaPrice {
+        grid-area: IP;
+      }
+
+      .ExoneradaLabel {
+        grid-area: EXT;
+        margin-left: 0.4rem;
+      }
+
+      .ExoneradaSol {
+        grid-area: ESO;
+      }
+
+      .ExoneradaPrice {
+        grid-area: EXP;
+      }
+
+      .RecargoLabel {
+        grid-area: RT;
+        margin-left: 0.4rem;
+      }
+
+      .RecargoSol {
+        grid-area: RSO;
+      }
+
+      .RecargoPrice {
+        grid-area: RP;
+      }
+
+      .IGVLabel {
+        grid-area: IGT;
+        margin-left: 0.4rem;
+      }
+
+      .IGVSol {
+        grid-area: IGSO;
+      }
+
+      .IGVPrice {
+        grid-area: IGP;
+      }
+
+      .MontoLabel {
+        grid-area: MT;
+        margin-left: 0.4rem;
+      }
+
+      .MontoSol {
+        grid-area: MSO;
+      }
+
+      .MontoPrice {
+        grid-area: MP;
+      }
+    }
+  }
+
+  .TypeDocumentContainer {
+    grid-area: TD;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    grid-template-columns: 8% 1fr;
+    grid-template-areas: ". R ";
+
+    .Radios {
+      grid-area: R;
+
+      .Document {
+        margin-left: $base-rem * 1.25;
+        color: $gray-text;
+        font-weight: bold;
+        font-size: $base-rem * 0.9;
+      }
+    }
+  }
+
+  .RucContainer {
+    font-size: 1rem;
+    overflow: hidden;
+    grid-area: RU;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    grid-template-columns: 29% 1fr;
+    grid-template-areas: "RUC NUM";
+
+    .Ruc {
+      grid-area: RUC;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      color: $white-text;
+      text-align: center;
+      grid-template-columns: 60% 1fr;
+      grid-template-areas: ". LA";
+
+      .Label {
+        grid-area: LA;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        background: $secundary-green;
+      }
+    }
+
+    .NumRuc {
+      align-items: center;
+      display: flex;
+      font-size: 0.7rem;
+      grid-area: NUM;
+      height: 100%;
+      width: 100%;
+      background: #dadee9;
+      margin-left: 5px;
+      color: $gray-text;
+      font-weight: bold;
+    }
+  }
+
+  .NameContainer {
+    overflow: hidden;
+    font-size: 1rem;
+    grid-area: NO;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    grid-template-columns: 29% 1fr;
+    grid-template-areas: "N L";
+
+    .Name {
+      grid-area: N;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      color: $white-text;
+      text-align: center;
+      grid-template-columns: 30% 1fr;
+      grid-template-areas: ". LA";
+
+      .LabelName {
+        grid-area: LA;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        background: $secundary-green;
+      }
+    }
+
+    .ActualName {
+      align-items: center;
+      display: flex;
+      font-size: 0.7rem;
+      grid-area: L;
+      min-height: 100%;
+      width: 100%;
+      background: #dadee9;
+      margin-left: 5px;
+      color: $gray-text;
+      font-weight: bold;
+    }
+  }
+
+  .DirectionContainer {
+    font-size: 1rem;
+    overflow: hidden;
+    font-size: 1rem;
+    grid-area: DI;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 29% 1fr;
+    grid-template-areas: "D A";
+
+    .Dir {
+      grid-area: D;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      color: $white-text;
+      text-align: center;
+      grid-template-columns: 10% 1fr;
+      grid-template-areas: ". LA";
+
+      .LabelDir {
+        grid-area: LA;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        background: $secundary-green;
+      }
+    }
+
+    .ActualDir {
+      align-items: center;
+      display: flex;
+      font-size: 0.7rem;
+      grid-area: A;
+      height: 100%;
+      width: 100%;
+      background: #dadee9;
+      margin-left: 5px;
+      color: $gray-text;
+      font-weight: bold;
+    }
+  }
+
+  .emailContainer {
+    font-size: 1rem;
+    overflow: hidden;
+    font-size: 1rem;
+    grid-area: EC;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 29% 1fr;
+    grid-template-areas: "DE AE";
+
+    .mail {
+      grid-area: DE;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      color: $white-text;
+      text-align: center;
+      grid-template-columns: 10% 1fr;
+      grid-template-areas: ". LAE";
+
+      .LabelMail {
+        grid-area: LAE;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        background: $secundary-green;
+      }
+    }
+
+    .email {
+      align-items: center;
+      display: flex;
+      font-size: 0.7rem;
+      grid-area: AE;
+      height: 100%;
+      width: 100%;
+      background: #dadee9;
+      margin-left: 5px;
+      color: $gray-text;
+      font-weight: bold;
+    }
+  }
+
+  .ButtonContainer {
+    display: grid;
+    grid-area: BU;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 65.5% 1fr;
+    grid-template-areas: ". WR";
+
+    .ButtWrapper {
+      grid-area: WR;
+      width: 100%;
+      height: 100%;
+      font-weight: bold;
+    }
+  }
+}

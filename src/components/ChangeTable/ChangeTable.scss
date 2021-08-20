@@ -1,0 +1,28 @@
+@import "../../_variables.scss";
+
+form {
+  color: $gray-text;
+  font-weight: bold;
+  width: 150px;
+
+  .TitleContainer {
+    margin-bottom: 8px;
+  }
+
+  .TextAreaContainer {
+    margin-bottom: 8px;
+
+    input {
+      outline: none;
+      font-family: inherit;
+      color: inherit;
+      font-size: 1rem;
+    }
+  }
+
+  .ButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+}

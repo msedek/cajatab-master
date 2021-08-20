@@ -1,0 +1,148 @@
+@import "../../_variables.scss";
+
+.Login {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  grid-template-columns: $base-percent * 34.1770438548998 $base-percent * 31.6459122902003 $base-percent * 34.1770438548998;
+  grid-template-rows: $base-percent * 15.9235668789809 $base-percent * 11.9490445859873 $base-percent * 1.91082802547771 $base-percent * 11.9490445859873 $base-percent * 1.91082802547771 $base-percent * 11.9490445859873 $base-percent * 1.91082802547771 $base-percent * 11.9490445859873 $base-percent * 6.5 $base-percent * 11.9490445859873 $base-percent * 13.12 1fr;
+  grid-template-areas:
+    ". . SW"
+    ". S ."
+    ". . ."
+    ". U ."
+    ". . ."
+    ". P ."
+    ". . ."
+    ". C ."
+    ". . ."
+    ". B ."
+    ". . ST";
+}
+
+.SettingsParent {
+  display: flex;
+  grid-area: ST;
+  justify-content: center;
+
+  .Settings {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: $main-green;
+    flex-direction: column;
+
+    .Text {
+      font-size: 0.7rem;
+      color: $font-icon-text;
+      font-weight: bold;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .Storage {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: $main-green;
+    flex-direction: column;
+
+    .Text {
+      font-size: 0.7rem;
+      color: $font-icon-text;
+      font-weight: bold;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.Switch {
+  grid-area: SW;
+  height: $base-percent * 100;
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: $base-percent * 50.9475539885412 $base-percent * 24.2397531952402 $base-percent * 24.8126928162186;
+  grid-template-rows: $base-percent * 45 $base-percent * 25 $base-percent * 30;
+  grid-template-areas:
+    ". . ."
+    ". SW ."
+    ". . .";
+
+  .Bswitch {
+    padding: $base-rem * 0.3;
+    display: grid;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: $round-border;
+    grid-area: SW;
+    background: #f3f3f5;
+    width: 100%;
+    grid-template-columns: $base-percent * 25.1838235294117 $base-percent * 49.6323529411766 $base-percent * 25.1838235294117;
+    grid-template-areas: "CB MD CS";
+    box-shadow: 2px 2px 5px 0px rgba(153, 151, 153, 1);
+
+    &:hover > .Csmall {
+      background: orange;
+      cursor: pointer;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .Cbig {
+      border-top-left-radius: $round-border;
+      border-bottom-left-radius: $round-border;
+      grid-area: CB;
+    }
+
+    .Mid {
+      grid-area: MD;
+      background: $white-text;
+    }
+
+    .Csmall {
+      height: $base-percent * 100;
+      background: $main-green;
+      border-radius: $round-border;
+      grid-area: CS;
+      width: $base-percent * 100;
+    }
+  }
+}
+
+.Store {
+  display: grid;
+  box-sizing: border-box;
+  grid-area: S;
+}
+
+.User {
+  display: grid;
+  box-sizing: border-box;
+  grid-area: U;
+}
+
+.Pass {
+  display: grid;
+  box-sizing: border-box;
+  grid-area: P;
+}
+
+.Cash {
+  display: grid;
+  box-sizing: border-box;
+  grid-area: C;
+}
+
+.Button {
+  display: grid;
+  box-sizing: border-box;
+  grid-area: B;
+}

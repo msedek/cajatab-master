@@ -1,0 +1,18 @@
+@import "../../../_variables.scss";
+
+.Popup {
+  display: grid;
+  padding: 10px;
+  color: $white-text;
+  // font-weight: bold;
+  position: fixed;
+  grid-template-columns: auto;
+  z-index: 100;
+  left: 40%;
+  transform: translateX(-500%);
+  top: 35%;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 2s ease-out;
+  opacity: 1;
+}

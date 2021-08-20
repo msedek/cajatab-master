@@ -1,0 +1,64 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  background: #f3f3f5;
+}
+
+::-webkit-scrollbar-track {
+  background: #989898;
+  border: 0.4rem solid #f3f3f5;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 200px;
+  background: #707070;
+}
+
+/* ::-webkit-scrollbar-button  {
+  background: #F3F3F5; 
+  border: 0.3rem solid #989898 ;
+  background-clip: content-box;
+  border-radius: 50%;
+  display: block;
+} */
+
+::-webkit-scrollbar-button:end {
+  display: block;
+}
+
+::-webkit-scrollbar-button:start {
+  display: block;
+}
+
+::-webkit-scrollbar-button {
+  background-size: 100%;
+  height: 10px;
+  widows: 10px;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.ContainerList {
+  @extend .GridCommons;
+  grid-template-areas: ". LI .";
+
+  .ListaCheck {
+    display: flex;
+    grid-area: LI;
+    overflow: auto;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+  }
+}

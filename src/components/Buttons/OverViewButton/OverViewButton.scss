@@ -1,0 +1,54 @@
+@import "../../../_variables.scss";
+
+.Container {
+  display: grid;
+  height: $base-rem * 6;
+  width: $base-percent * 100;
+  grid-template-rows: $base-percent * 20 $base-percent * 40 1fr;
+  grid-template-areas:
+    "B"
+    "."
+    "T";
+  &:hover,
+  &:active {
+    filter: brightness($base-percent * 110);
+    cursor: pointer;
+  }
+}
+
+.Button {
+  color: $main-green;
+  text-align: center;
+  font-size: $base-rem * 3.1;
+  grid-area: B;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+  z-index: 1;
+}
+
+.Wrapper {
+  margin-top: $base-rem * 0.88;
+  position: relative;
+  grid-area: B;
+  background: $font-awesome-back;
+  height: $base-rem * 2.4;
+  width: $base-rem * 2.05;
+  transform: translateX($base-percent * 79);
+
+  // @media(min-width:$media-break-width) , (min-height:$media-break-height) {
+  //     margin-top: $base-rem * 0.88;
+  //     height: $base-rem * 2.40;
+  //     width: $base-rem * 2.19;
+  //     transform: translateX($base-percent * 82.6)
+  // }
+}
+
+.Text {
+  grid-area: T;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+  color: $font-awesome-btext;
+  font-size: $base-rem * 1.1;
+  font-weight: bold;
+  text-align: center;
+}

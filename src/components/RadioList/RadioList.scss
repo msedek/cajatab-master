@@ -1,0 +1,37 @@
+@import '../../_variables.scss';
+
+  input {
+    outline: none;
+    margin: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+    input[type='radio']:after {
+      width: 13px;
+      height: 13px;
+      top: -2px;
+      position: relative;
+      content: '';
+      display: inline-block;
+      background-color: $color-text;
+      visibility: visible;
+      border: 2px solid $font-awesome-icono;
+      border-radius: 2px;
+    }
+    
+    input[type='radio']:checked:after {
+      width: 13px;
+      height: 13px;
+      top: -2px;
+      position: relative;
+      content: '';
+      background-color: $font-awesome-icono;
+      display: inline-block;
+      visibility: visible;
+      border: 2px solid $font-awesome-icono;
+      border-radius: 2px;
+    }
+  

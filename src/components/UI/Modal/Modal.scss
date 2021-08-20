@@ -1,0 +1,21 @@
+@import "../../../_variables.scss";
+
+.Modal {
+  border-radius: 10px;
+  display: grid;
+  position: fixed;
+  z-index: 500;
+  background-color: $frame-card;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 16px;
+  grid-template-columns: auto;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+@media (min-width: 600px) {
+  .Modal {
+    left: calc(50% - 250px);
+  }
+}

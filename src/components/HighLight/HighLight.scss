@@ -1,0 +1,36 @@
+@import '../../_variables.scss';
+
+.Container {
+    width: $base-rem * 2;
+    height: $base-rem * 2;
+    &:hover>.Circle {
+        filter: brightness($base-percent * 120);
+        cursor: pointer;
+    }
+    &:active,
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.Circle {
+    display: flex;
+    width: $base-percent * 100;
+    height: $base-percent * 100;
+    border-radius: $base-percent * 50;
+    align-items: center;
+    justify-content: center;
+}
+
+.SmallCircle {
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+    font-size: $base-rem * 1.2;
+    width: $base-percent * 75;
+    height: $base-percent * 75;
+    border-radius: $base-percent * 50;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 5px 0px rgba(31,30,31,1);
+}

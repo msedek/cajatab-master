@@ -1,0 +1,326 @@
+@import "../../_variables.scss";
+
+.Common-section {
+  @extend .Sub-common;
+  align-items: center;
+  justify-content: center;
+  background: $main-green;
+  color: $white-text;
+  font-size: $base-rem * 1.7;
+  font-weight: bold;
+}
+
+.Sub-common {
+  display: flex;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+}
+
+.CommList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $base-rem * 1.4;
+  color: $gray-text;
+}
+
+.SharedGrid {
+  width: $base-percent * 100;
+  grid-template-columns: $base-percent * 28 $base-percent * 14 $base-percent * 13.1 $base-percent * 20 1fr;
+  grid-template-areas: "L F S T R";
+}
+
+.Container {
+  @extend .Sub-common;
+  display: flex;
+  border-top-right-radius: $table-status-radius;
+  border-top-left-radius: $table-status-radius;
+  background: $frame-card;
+  flex-direction: column;
+
+  .Headers {
+    display: grid;
+    grid-gap: 3px;
+    height: $base-percent * 14.5;
+    @extend .SharedGrid;
+
+    .LeftCorner {
+      grid-area: L;
+      border-top-left-radius: $table-status-radius;
+      @extend .Common-section;
+    }
+
+    .FirstPiece {
+      grid-area: F;
+      @extend .Common-section;
+    }
+
+    .SecondPiece {
+      grid-area: S;
+      @extend .Common-section;
+    }
+
+    .ThirdPiece {
+      grid-area: T;
+      @extend .Common-section;
+    }
+
+    .RightCorner {
+      grid-area: R;
+      border-top-right-radius: $table-status-radius;
+      @extend .Common-section;
+    }
+  }
+
+  .Lists {
+    display: grid;
+    overflow: auto;
+    height: $base-percent * 51.5;
+    width: $base-percent * 100;
+  }
+
+  .ContRow {
+    display: grid;
+    height: 64px;
+    @extend .SharedGrid;
+    
+    .Description {
+      grid-area: L;
+      @extend .CommList;
+      justify-content: left;
+      
+      .Descrip {
+        margin-left: $base-rem * 3;
+      }
+    }
+    
+    .Quantity {
+      grid-area: F;
+      @extend .CommList;
+    }
+
+    .Price {
+      grid-area: S;
+      @extend .CommList;
+    }
+
+    .TotalPrice {
+      grid-area: T;
+      @extend .CommList;
+    }
+
+    .Status {
+      grid-area: R;
+      @extend .CommList;
+    }
+  }
+
+  .Totals {
+    display: flex;
+    background: #d1d2d4;
+    height: $base-percent * 15;
+
+    flex-direction: row;
+
+    .PreCuenta{
+      display: flex;
+      align-content: center;
+      /* background: $secundary-green; */
+      align-items: center;
+      justify-content: center;
+      height: 25px;
+      margin-bottom: 2px;
+      margin-top: 2px;
+      border-radius: 50px;
+      width: 100px;
+      font-weight: bold;
+      color:$font-white;
+
+      &:hover{
+        filter: brightness($base-percent * 110);
+        cursor: pointer;
+      }
+    }
+
+    .MultiCont {
+      height: $base-rem * 2.4;
+      margin-left: auto;
+    }
+  }
+
+  .Buttons {
+    display: grid;
+    background: $frame-background;
+    height: $base-percent * 19;
+    width: $base-percent * 100;
+    padding-top: 10px;
+    grid-template-columns: $base-percent * 26.9 1fr $base-percent * 8 $base-percent * 8;
+    grid-template-areas: "OR SET C E";
+
+    .SetArea {
+      grid-area: SET;
+      display: grid;
+      grid-auto-columns: 3% 1fr 1fr;
+
+      grid-template-areas: ". SEC SEU";
+
+      .SettingsCambiar {
+        grid-area: SEC;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $main-green;
+        font-size: 2rem;
+        font-weight: bold;
+
+        .ChangeTable {
+          color: $font-awesome-icono;
+          font-size: 1rem;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .SettingsUnir {
+        grid-area: SEU;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $main-green;
+        font-size: 2rem;
+        font-weight: bold;
+
+        .UnirTable {
+          color: $font-awesome-icono;
+          font-size: 1rem;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .OrderButtons {
+      display: grid;
+      grid-area: OR;
+      width: 100%;
+      height: 100%;
+      grid-template-columns: 19% 21.5% 35% 1fr;
+      grid-template-areas: ". FO . WA";
+
+      .OrderButton {
+        display: grid;
+        grid-area: FO;
+        width: 100%;
+        height: 100%;
+        grid-template-rows: 55.1% 1fr;
+        grid-template-areas:
+          "IC"
+          "TX";
+
+        .ActualButton {
+          color: $main-green;
+          font-size: 3.5rem;
+          text-align: center;
+        }
+
+        .OrderText {
+          color: $font-awesome-btext;
+          text-align: center;
+          font-weight: bold;
+        }
+
+        &:hover > .ActualButton,
+        &:hover > .OrderText {
+          filter: brightness($base-percent * 110);
+          cursor: pointer;
+        }
+      }
+
+      .WaiterButton {
+        grid-area: WA;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 10% 40.5% 4% 1fr;
+        grid-template-areas:
+          "TW"
+          "BW"
+          "."
+          "TXW";
+
+        .TopWaiter {
+          grid-area: TW;
+          background: $main-green;
+          justify-self: center;
+          width: 25%;
+          border-top-left-radius: 110px;
+          border-top-right-radius: 110px;
+          position: relative;
+          overflow: hidden;
+          transform: translateY(11%);
+        }
+
+        .TopWaiter::after {
+          grid-area: BW;
+          background: $frame-background;
+          content: "";
+          width: 40%;
+          top: 30%;
+          left: 30%;
+          height: 50%;
+          border-top-left-radius: 110px;
+          border-top-right-radius: 110px;
+          position: absolute;
+        }
+
+        .BottomWaiter {
+          grid-area: BW;
+          background: $main-green;
+          border-top-left-radius: 110px;
+          border-top-right-radius: 110px;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .BottomWaiter::after {
+          grid-area: BW;
+          background: $frame-background;
+          content: "";
+          width: 7%;
+          top: -16%;
+          left: 50%;
+          height: 200%;
+          transform: rotate(90deg);
+          position: absolute;
+        }
+
+        .TextWaiter {
+          grid-area: TXW;
+          color: $font-awesome-btext;
+          text-align: center;
+          font-weight: bold;
+        }
+
+        &:hover > .BottomWaiter,
+        &:hover > .TopWaiter {
+          filter: brightness($base-percent * 110);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .Exit {
+      grid-area: E;
+    }
+
+    .Charge {
+      grid-area: C;
+    }
+  }
+}

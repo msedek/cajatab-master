@@ -1,0 +1,374 @@
+@import "../../../_variables.scss";
+
+.Container {
+  display: grid;
+  width: $base-percent * 100;
+  height: $base-percent * 100;
+  grid-template-columns: 6% 1fr 15.5%;
+  grid-template-rows: 7% 45.5% 12.5% 7% 7% 7% 7% 7%;
+  grid-template-areas:
+    ". . ."
+    ". LI ."
+    ". TD ."
+    ". RU ."
+    ". NO ."
+    ". DI ."
+    ". EC ."
+    ". BU .";
+
+  .ListContainer {
+    grid-area: LI;
+    overflow: hidden;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    background: #dadee9;
+    border-radius: 20px;
+    grid-template-rows: 18.5% 62.2% 1fr;
+    grid-template-areas:
+      "TI"
+      "CO"
+      "TO";
+
+    .Title {
+      display: grid;
+      grid-area: TI;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      color: $gray-text;
+      grid-template-rows: 35% 1fr 1fr;
+      grid-template-columns: 9% 1fr 11%;
+      grid-template-areas:
+        ". . ."
+        ". C ."
+        ". B .";
+
+      .NumCuenta {
+        grid-area: C;
+        margin-bottom: 6px;
+      }
+
+      .BreakLine {
+        grid-area: B;
+        border: 1px solid $secundary-green;
+        margin-bottom: 6px;
+      }
+    }
+
+    .Content {
+      display: grid;
+      overflow: auto;
+      grid-area: CO;
+      color: $gray-text;
+      grid-template-columns: 9% 1fr 10.7%;
+      grid-template-areas: ". C .";
+
+      .TableContent {
+        grid-area: C;
+      }
+    }
+
+    .Totals {
+      display: grid;
+      grid-area: TO;
+      color: $white-text;
+      font-weight: bold;
+      font-size: 1.25rem;
+      background: $secundary-green;
+      grid-template-columns: 60% 1fr 30%;
+      grid-template-rows: 20% 1fr;
+      grid-template-areas:
+        ". . ."
+        "T . P";
+
+      .TotalLabel {
+        grid-area: T;
+        margin-left: 2rem;
+      }
+
+      .TotalPrice {
+        grid-area: P;
+      }
+    }
+  }
+
+  .TypeDocumentContainer {
+    grid-area: TD;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 38% 1fr;
+    grid-template-columns: 8% 1fr;
+    grid-template-areas:
+      ". . "
+      ". R ";
+
+    .Radios {
+      grid-area: R;
+
+      .FactStyle {
+        outline: none;
+        margin-left: $base-rem * 1.65;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .BolStyle {
+        outline: none;
+        margin-left: $base-rem * 1.45;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .Factura {
+        margin-left: $base-rem * 1.25;
+        color: $gray-text;
+        font-weight: bold;
+        font-size: $base-rem * 0.9;
+      }
+
+      .Boleta {
+        margin-left: $base-rem * 1.9;
+        color: $gray-text;
+        font-weight: bold;
+        font-size: $base-rem * 0.9;
+      }
+
+      input[type="radio"]:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+      }
+
+      input[type="radio"]:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: $radio-color;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+      }
+    }
+  }
+
+  .RucContainer {
+    overflow: hidden;
+    grid-area: RU;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    grid-template-columns: 29% 1fr 5% 25%;
+    grid-template-areas: "RUC NUM . BRU";
+
+    .Ruc {
+      grid-area: RUC;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      color: $white-text;
+      text-align: center;
+      grid-template-columns: 60% 1fr;
+      grid-template-areas: ". LA";
+
+      .Label {
+        grid-area: LA;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        background: $secundary-green;
+      }
+    }
+
+    .NumRuc {
+      grid-area: NUM;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      outline: none;
+      border-style: none;
+      background: #dadee9;
+      margin-left: 5px;
+      color: $gray-text;
+    }
+
+    .BuscarRuc {
+      grid-area: BRU;
+      -webkit-appearance: none;
+      font-weight: bold;
+      outline: none;
+      border-style: none;
+      background: $secundary-green;
+      color: $white-text;
+      border-radius: 3px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .NameContainer {
+    overflow: hidden;
+    grid-area: NO;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    grid-template-columns: 29% 1fr;
+    grid-template-areas: "N L";
+
+    .Name {
+      grid-area: N;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      color: $white-text;
+      text-align: center;
+      grid-template-columns: 30% 1fr;
+      grid-template-areas: ". LA";
+
+      .LabelName {
+        grid-area: LA;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        background: $secundary-green;
+      }
+    }
+
+    .ActualName {
+      grid-area: L;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      outline: none;
+      border-style: none;
+      background: #dadee9;
+      margin-left: 5px;
+      color: $gray-text;
+    }
+  }
+
+  .DirectionContainer {
+    overflow: hidden;
+    grid-area: DI;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 29% 1fr;
+    grid-template-areas: "D A";
+
+    .Dir {
+      grid-area: D;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      color: $white-text;
+      text-align: center;
+      grid-template-columns: 10% 1fr;
+      grid-template-areas: ". LA";
+
+      .LabelDir {
+        grid-area: LA;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        background: $secundary-green;
+      }
+    }
+
+    .ActualDir {
+      grid-area: A;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      outline: none;
+      border-style: none;
+      background: #dadee9;
+      margin-left: 5px;
+      color: $gray-text;
+    }
+  }
+
+  .emailContainer {
+    overflow: hidden;
+    grid-area: EC;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 29% 1fr;
+    grid-template-areas: "DE AE";
+
+    .mail {
+      grid-area: DE;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      color: $white-text;
+      text-align: center;
+      grid-template-columns: 40% 1fr;
+      grid-template-areas: ". LAE";
+
+      .LabelMail {
+        grid-area: LAE;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        background: $secundary-green;
+      }
+    }
+
+    .email {
+      grid-area: AE;
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      outline: none;
+      border-style: none;
+      background: #dadee9;
+      margin-left: 5px;
+      color: $gray-text;
+    }
+  }
+
+  .ButtonContainer {
+    display: grid;
+    grid-area: BU;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 65.5% 1fr;
+    grid-template-areas: ". WR";
+
+    .ButtWrapper {
+      grid-area: WR;
+      width: 100%;
+      height: 100%;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Containe {
+  @extend .GridCommons;
+  grid-template-columns: 8% 1fr 19.1%;
+  grid-template-rows: 50% 1fr;
+  grid-template-areas:
+    ". . ."
+    ". TL .";
+
+  .HeaderContaier {
+    @extend .GridCommons;
+    grid-area: TL;
+    grid-gap: 2.8px;
+    color: $font-white;
+    font-weight: bold;
+    grid-template-columns: 30% 20% 20% 20% 1fr;
+    grid-template-areas: "IN QU UN DA SE";
+
+    .ItemName {
+      @extend .GridCommons;
+      grid-area: IN;
+      background: $main-green;
+      align-content: center;
+      justify-content: center;
+      border-top-left-radius: 25px;
+    }
+
+    .Quantity {
+      @extend .GridCommons;
+      background: $main-green;
+      align-content: center;
+      justify-content: center;
+      grid-area: QU;
+    }
+
+    .Unity {
+      @extend .GridCommons;
+      background: $main-green;
+      align-content: center;
+      justify-content: center;
+      grid-area: UN;
+    }
+
+    .Date {
+      @extend .GridCommons;
+      background: $main-green;
+      align-content: center;
+      justify-content: center;
+      grid-area: DA;
+    }
+
+    .Select {
+      @extend .GridCommons;
+      background: $main-green;
+      grid-area: SE;
+      align-content: center;
+      justify-content: center;
+      width: 8rem;
+      border-top-right-radius: 25px;
+    }
+  }
+}

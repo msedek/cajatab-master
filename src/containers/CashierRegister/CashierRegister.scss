@@ -1,0 +1,431 @@
+@import "../../_variables.scss";
+
+.Container {
+  display: grid;
+  @extend .SubContainer;
+}
+
+.HoverButton {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* .MyPago {
+  &:hover {
+    cursor: pointer;
+  }
+} */
+
+.ConfTotals {
+  @extend .SubContainer;
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: center;
+  background: $secundary-green;
+  border-radius: 25px;
+  color: $white-text;
+  font-weight: bold;
+}
+
+.ConfBox {
+  background: $secundary-green;
+  outline: none;
+  border-style: none;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  color: $white-text;
+  font-weight: bold;
+  width: 40px;
+  height: 20px;
+  margin-right: 15px;
+  padding-left: 3px;
+}
+
+.SubContainer {
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+}
+
+.CashierRegisterContainer {
+  @extend .Container;
+  grid-template-rows: 3.5% 44% 3.5% 27% 7% 1fr;
+  grid-template-areas:
+    "."
+    "TC"
+    "."
+    "MC"
+    "."
+    "BC";
+
+  .TopContainer {
+    grid-area: TC;
+    @extend .Container;
+    grid-template-columns: 6.3% 27.1% 1% 56.6% 1fr;
+    grid-template-areas: ". TCO . TA .";
+
+    .TopControls {
+      grid-area: TCO;
+      display: flex;
+      @extend .SubContainer;
+
+      .Box {
+        grid-area: BO;
+        @extend .SubContainer;
+        background: $dark-line;
+        padding: 8px;
+        display: flex;
+        max-height: 275px;
+        font-family: inherit;
+        color: $font-icon-text;
+        font-weight: bold;
+        font-size: 0.8rem;
+        border-radius: 13px;
+        overflow: auto;
+        box-shadow: 0 4px 8px -2px #888;
+      }
+    }
+
+    .Tabs {
+      grid-area: TA;
+      @extend .Container;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px -2px #888;
+      grid-template-rows: 19.5% 12% 1fr;
+      grid-template-areas:
+        "LA"
+        "TI"
+        "CO";
+
+      .TabsContainer {
+        grid-area: LA;
+        display: flex;
+        box-sizing: content-box;
+        overflow: hidden;
+        @extend .SubContainer;
+
+        .RealTab {
+          @extend .SubContainer;
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+          border-bottom: 1px solid $white-text;
+          text-decoration: none;
+
+          .ArSol {
+            height: 100%;
+            width: 20%;
+            float: left;
+            text-align: center;
+
+            .ActualTab {
+              @extend .SubContainer;
+              width: 123%;
+              position: relative;
+              &:hover {
+                filter: brightness($base-percent * 110);
+                cursor: pointer;
+              }
+            }
+          }
+
+          .ArDol {
+            height: 100%;
+            width: 20%;
+            text-align: center;
+            float: left;
+
+            .ActualTab2 {
+              @extend .SubContainer;
+              width: 123%;
+              position: relative;
+
+              &:hover {
+                filter: brightness($base-percent * 110);
+                cursor: pointer;
+              }
+            }
+          }
+
+          .ArChk {
+            height: 100%;
+            width: 20%;
+            text-align: center;
+            float: left;
+
+            .ActualTab3 {
+              @extend .SubContainer;
+              width: 123%;
+              position: relative;
+
+              &:hover {
+                filter: brightness($base-percent * 110);
+                cursor: pointer;
+              }
+            }
+          }
+
+          .ArDbt {
+            height: 100%;
+            width: 20%;
+            text-align: center;
+            float: left;
+
+            .ActualTab4 {
+              @extend .SubContainer;
+              width: 123%;
+              position: relative;
+
+              &:hover {
+                filter: brightness($base-percent * 110);
+                cursor: pointer;
+              }
+            }
+          }
+
+          .ArCdt {
+            height: 100%;
+            width: 20%;
+            text-align: center;
+            float: left;
+
+            .ActualTab5 {
+              @extend .SubContainer;
+              width: 123%;
+              position: relative;
+
+              &:hover {
+                filter: brightness($base-percent * 110);
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      .TitleContainer {
+        grid-area: TI;
+        @extend .Container;
+        grid-column-gap: 1px;
+        color: $white-text;
+        font-size: 0.8rem;
+        font-weight: bold;
+        grid-template-columns: 50% 32.6% 1fr;
+        grid-template-areas: "DE QA TO";
+
+        .HeaderTabDesc {
+          grid-area: DE;
+          background: $main-green;
+          @extend .SubContainer;
+          padding-left: 1.25rem;
+          padding-top: 0.5rem;
+        }
+
+        .HeaderTabQuant {
+          background: $main-green;
+          text-align: center;
+          grid-area: QA;
+          @extend .SubContainer;
+          padding-top: 0.5rem;
+        }
+
+        .HeaderTabTot {
+          background: $main-green;
+          text-align: center;
+          grid-area: TO;
+          @extend .SubContainer;
+          padding-top: 0.5rem;
+        }
+      }
+
+      .ContenContainer {
+        grid-area: CO;
+        display: flex;
+        height: 190px;
+        overflow: auto;
+        background: $dark-line;
+
+        .DescriptionContainer {
+          grid-area: DE;
+          color: $gray-text;
+          font-size: 0.9rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .MidContainer {
+    grid-area: MC;
+    @extend .Container;
+    font-size: 0.8rem;
+    grid-template-columns: 1fr 16% 1% 16% 1% 16% 1% 16% 1% 16% 1fr;
+    grid-template-rows: 12% 4% 12% 10% 1fr;
+    grid-template-areas:
+      ". TI . TL . TC . TM . TO ."
+      ". . . . . . . . . . ."
+      ". TI2 . TL2 . TC2 . TM2 . TO2 ."
+      ". . . . . . . . . . ."
+      "TE TE TE TE TE TE TE TE TE TE TE";
+
+    .CashSol {
+      grid-area: TI;
+      @extend .ConfTotals;
+    }
+
+    .CashDol {
+      grid-area: TL;
+      @extend .ConfTotals;
+    }
+
+    .Visa {
+      grid-area: TC;
+      @extend .ConfTotals;
+    }
+
+    .Master {
+      grid-area: TM;
+      @extend .ConfTotals;
+    }
+
+    .Others {
+      grid-area: TO;
+      @extend .ConfTotals;
+    }
+
+    .CashSol2 {
+      grid-area: TI2;
+      @extend .ConfTotals;
+    }
+
+    .CashDol2 {
+      grid-area: TL2;
+      @extend .ConfTotals;
+    }
+
+    .Visa2 {
+      grid-area: TC2;
+      @extend .ConfTotals;
+    }
+
+    .Master2 {
+      grid-area: TM2;
+      @extend .ConfTotals;
+    }
+
+    .Others2 {
+      grid-area: TO2;
+      @extend .ConfTotals;
+    }
+
+    .ExpensesContainer {
+      grid-area: TE;
+      justify-self: center;
+      width: 87.1%;
+      @extend .Container;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px -2px #888;
+      grid-template-rows: 25.7% 1fr;
+      grid-template-areas:
+        "HE"
+        "CO";
+
+      .HeaderContainer {
+        grid-area: HE;
+        @extend .Container;
+        color: $white-text;
+        font-weight: bold;
+        font-size: 0.9rem;
+        background: $main-green;
+        grid-template-columns: 3% 5% 6.5% 6% 7% 17% 8.6% 5.7% 9.7% 9% 6% 1fr;
+        grid-template-areas: ". DAT . COD . CON . AMO . REF . AUT .";
+
+        .DateExpenses {
+          grid-area: DAT;
+          margin-top: 0.4rem;
+          @extend .SubContainer;
+        }
+
+        .CodeExpenses {
+          grid-area: COD;
+          margin-top: 0.4rem;
+          @extend .SubContainer;
+        }
+
+        .ConceptExpenses {
+          grid-area: CON;
+          margin-top: 0.4rem;
+          @extend .SubContainer;
+        }
+
+        .AmountExpenses {
+          grid-area: AMO;
+          margin-top: 0.4rem;
+          @extend .SubContainer;
+        }
+
+        .RefferenceExpenses {
+          grid-area: REF;
+          margin-top: 0.4rem;
+          @extend .SubContainer;
+        }
+
+        .AuthorizedExpenses {
+          grid-area: AUT;
+          margin-top: 0.4rem;
+          @extend .SubContainer;
+        }
+      }
+
+      .ContentContainer {
+        grid-area: CO;
+        background: $dark-line;
+        @extend .Container;
+      }
+    }
+  }
+
+  .BotContainer {
+    grid-area: BC;
+    @extend .Container;
+    grid-template-columns: 55% 2fr 1fr;
+    grid-template-areas: "TO . BU";
+
+    .ButtonContainer {
+      grid-area: BU;
+      display: flex;
+      margin-left: 0.2rem;
+      margin-top: -0.45rem;
+
+      .ActualButton {
+        display: flex;
+        font-size: 2.5rem;
+        align-content: center;
+        align-items: center;
+
+        .LinkButton2 {
+          display: flex;
+          flex-direction: column;
+          color: $main-green;
+          margin-right: 35px;
+          text-align: center;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .TotalContainer {
+      grid-area: TO;
+      @extend .SubContainer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

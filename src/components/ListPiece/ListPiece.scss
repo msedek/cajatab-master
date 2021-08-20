@@ -1,0 +1,9 @@
+@import '../../_variables.scss';
+
+.Container {
+    display: inline-block;
+    height: $base-percent * 100;
+    background: orange;
+    width: $base-percent * 100;
+    color: greenyellow
+}

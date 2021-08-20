@@ -1,0 +1,64 @@
+@import '../../_variables.scss';
+
+*{
+    box-sizing: border-box;
+  }
+
+.Container {
+    grid-area: S;
+    display: grid;
+    width: $base-percent * 100;
+    align-items: center;
+    grid-template-columns: $base-percent * 9 $base-percent * 13 1fr;
+    grid-template-areas: '. I N';
+    margin-bottom: $base-rem * 0.5;
+    &:hover>.BigCircle {
+        background: lighten($main-green, $bright);
+        cursor: pointer;
+        color: $main-green !important;
+    }
+    &:hover>.Name {
+        color: $main-green;
+        cursor: pointer;
+    }
+    &:active,
+    &:hover {
+    cursor: pointer;
+    }
+}
+
+.BigCircle {
+    grid-area: I;
+    display: flex;
+    background: $main-green;
+    height:  $base-rem * 2.5;
+    width:  $base-rem * 2.5;
+    align-items: center;
+    justify-content: center; 
+    border-radius: $base-percent * 50;
+}
+
+.SmallCircle {
+    text-align: center;
+    font-weight: bold;
+    font-size:  $base-rem * 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $background;
+    height: $base-percent * 75;
+    width: $base-percent * 75;
+    border-radius: $base-percent * 50;
+}
+
+.Name {
+    grid-area: N;
+    color: $font-awesome-text;
+    font-weight: bold;
+    font-size:  $base-rem * 1.2;
+    display: flex;
+    align-items: center;
+    height:  $base-rem * 2.5;
+    width: $base-percent * 100;
+    background: $background;
+}

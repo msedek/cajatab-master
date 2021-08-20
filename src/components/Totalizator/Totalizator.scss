@@ -1,0 +1,19 @@
+@import '../../_variables.scss';
+
+.Container {
+  display: flex;
+  font-weight: bold;
+  font-family: inherit;
+
+  .FirstText {
+    display: flex;
+    grid-area: F;
+    align-items: center;
+  }
+
+  .SecondText {
+    display: flex;
+    grid-area: S;
+    align-items: center;
+  }
+}

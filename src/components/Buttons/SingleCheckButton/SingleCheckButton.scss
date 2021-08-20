@@ -1,0 +1,63 @@
+@import '../../../_variables.scss';
+
+.Container {
+    display: grid;
+    height: $base-rem * 6;
+    width: $base-percent * 100;
+    grid-template-rows: $base-percent * 30 $base-percent * 50 1fr;
+    grid-template-areas: 'B'
+                         'B'
+                         'T';
+
+    .Button {
+        display: grid;
+        font-size: $base-rem * 3.1;
+        grid-area: B;
+        height: $base-percent * 100;
+        width: $base-percent * 100;
+        grid-template-columns: 1fr 12% 40% 30%;
+        grid-template-rows: 15% 85%;
+        grid-template-areas: '. f1 . .'
+                             '. f1 f2 .';
+
+        &:hover>.file2,
+        &:active>.file2{
+        filter: brightness($base-percent * 110);
+        cursor: pointer;
+        }
+
+        .file2 {
+            grid-area: f2;
+            z-index: 1;
+            display: grid;
+            height: 100%;
+            width: 100%;
+            grid-template-columns: 100%;
+            grid-template-areas: 'U';
+
+            .f21 {
+                grid-area: U;
+                color: $main-green;
+                z-index: 1;
+            }
+
+            .f22 {
+                grid-area: U;
+                color: $font-awesome-back;
+            }
+        }
+    }
+    
+    .Text {
+        grid-area: T;
+        height: $base-percent * 100;
+        width: $base-percent * 100;
+        color: $font-awesome-btext;
+        font: {
+            size:$base-rem * 1.1;
+            weight: bold;
+        }
+        text-align: center;
+    }
+}
+

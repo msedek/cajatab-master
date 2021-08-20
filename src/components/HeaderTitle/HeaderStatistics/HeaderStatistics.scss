@@ -1,0 +1,109 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.ConfGeneral {
+  background: $main-green;
+  line-height: 100%;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: $font-white;
+  text-align: center;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ContainerHeaderStatistics {
+  @extend .GridCommons;
+  grid-template-columns: 25.8% 17.1% 16.4% 17% 15.3% 1fr;
+  grid-template-rows: 13% 1fr;
+  grid-gap: 2.1px;
+  grid-template-areas:
+    ". . . . . ."
+    ". HW TS SA SH .";
+
+  .ZoneHoursWorked {
+    @extend .GridCommons;
+    grid-area: HW;
+    @extend .ConfGeneral;
+    border-top-left-radius: 18px;
+    grid-template-columns: 80% 1fr 0%;
+    grid-template-rows: 80% 1fr 10%;
+    grid-template-areas:
+      ". . ."
+      ". TX ."
+      ". . .";
+
+    .Text {
+      @extend .SubGrid;
+      grid-area: TX;
+      margin-top: 0.53rem;
+      margin-left: 0.7rem;
+    }
+  }
+
+  .ZoneTablesServed {
+    @extend .GridCommons;
+    grid-area: TS;
+    @extend .ConfGeneral;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 6% 1fr 0%;
+    grid-template-areas:
+      ". . ."
+      ". TX ."
+      ". . .";
+
+    .Text {
+      @extend .SubGrid;
+      grid-area: TX;
+      margin-top: 0.39rem;
+      margin-left: -0.13rem;
+    }
+  }
+
+  .ZoneSales {
+    @extend .GridCommons;
+    grid-area: SA;
+    @extend.confgeneral;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 6% 1fr 0%;
+    grid-template-areas:
+      ". . ."
+      ". TX ."
+      ". . .";
+
+    .Text {
+      @extend .SubGrid;
+      grid-area: TX;
+      margin-top: 0.79rem;
+      margin-left: -0.1rem;
+    }
+  }
+
+  .ZoneSalesHours {
+    @extend .GridCommons;
+    grid-area: SH;
+    @extend .ConfGeneral;
+    border-top-right-radius: 18px;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 6% 1fr 0%;
+    grid-template-areas:
+      ". . ."
+      ". TX ."
+      ". . .";
+
+    .Text {
+      @extend .SubGrid;
+      grid-area: TX;
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+      margin-left: 0.1rem;
+    }
+  }
+}

@@ -1,0 +1,638 @@
+@import "../../_variables.scss";
+
+.Sub-common {
+  display: flex;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+}
+
+.Common-section {
+  @extend .Sub-common;
+  align-items: center;
+  justify-content: center;
+  background: $main-green;
+  color: $white-text;
+  font-size: $base-rem * 1.7;
+  font-weight: bold;
+}
+
+.CommList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $base-rem * 1.4;
+  color: $gray-text;
+}
+
+.SharedGrid {
+  width: $base-percent * 100;
+  grid-template-columns: $base-percent * 38.5 $base-percent * 18.3 $base-percent * 21.4 1fr;
+  grid-template-areas: "L F S R";
+}
+
+.CalcItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ContTypePay {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 100%;
+  grid-template-areas: "A";
+}
+
+.ComboConf {
+  grid-area: A;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  color: $gray-text;
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  padding-left: 1rem;
+  padding-top: 2px;
+  background: linear-gradient(
+    to right,
+    $main-green 2.2rem,
+    $frame-background 0
+  );
+  -webkit-appearance: none;
+  background-position-x: 15.35rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  /*   @media(min-width:$media-break-width) , (min-height:$media-break-height) {
+    background-position-x: 17.55rem;
+  } */
+}
+
+.ArrowConf {
+  align-self: center;
+  grid-area: A;
+  margin-left: auto;
+  margin-right: 0.4rem;
+  color: $white-text;
+  font-size: 1.5rem;
+}
+
+.Hovering {
+  &:hover,
+  &:active {
+    background: lighten($main-green, $bright) !important;
+    cursor: pointer;
+  }
+}
+
+.SupraContainer {
+  display: grid;
+  width: 100%;
+  height: $base-percent * 100;
+  grid-template-columns: 60.5% 1fr;
+  grid-template-areas: "M B";
+
+  .ContainerButtons {
+    display: grid;
+    grid-area: B;
+    width: 100%;
+    min-height: 100%;
+    grid-template-rows: $base-percent * 80 1fr;
+    grid-template-areas:
+      "CH"
+      "BU";
+
+    .Changer {
+      display: flex;
+      grid-area: CH;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .Buttons {
+      grid-area: BU;
+      display: grid;
+      height: $base-percent * 100;
+      width: $base-percent * 100;
+      grid-template-columns: 5% 1fr 1fr 2fr;
+      grid-template-rows: $base-percent * 5 1fr;
+      grid-template-areas:
+        ". . . ."
+        "CU M C E";
+
+      .Precuenta {
+        grid-area: CU;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .PreText {
+          color: $font-icon-text;
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .Exit {
+        grid-area: E;
+      }
+
+      .Charge {
+        grid-area: C;
+        margin-left: 3rem;
+      }
+
+      .Monitor {
+        grid-area: M;
+        margin-left: 7rem;
+      }
+    }
+  }
+
+  .ContainerCashier {
+    grid-area: M;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 50% 1fr;
+    grid-template-areas: "P C";
+
+    .PaymentTypeContainer {
+      grid-area: P;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      grid-template-columns: 14% 1fr 7.5%;
+      grid-template-rows: 12.9% 1fr 30%;
+      grid-template-areas:
+        ". . ."
+        ". P ."
+        ". . .";
+
+      .PaymentsContainer {
+        grid-area: P;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-row-gap: 0.8rem;
+        grid-template-rows: 9.5% 10% 10% 50% 1fr;
+        grid-template-areas:
+          "TI"
+          "CA"
+          "TD"
+          "TC"
+          "TR";
+
+        .Title {
+          grid-area: TI;
+          color: $font-icon-text;
+          font-weight: bold;
+          font-size: 1.3rem;
+          height: 100%;
+          width: 100%;
+        }
+
+        .Descuentos {
+          grid-area: CA;
+          height: 100%;
+          width: 100%;
+        }
+
+        .Pagos {
+          grid-area: TD;
+          height: 100%;
+          width: 100%;
+        }
+
+        .MixtoContainer {
+          grid-area: TC;
+          display: grid;
+          height: 100%;
+          width: 100%;
+          grid-template-rows: 16.5% 10% 11% 10% 10%;
+          grid-template-areas:
+            "C"
+            "."
+            "TBB"
+            "."
+            "SBT";
+
+          .Mixtos {
+            grid-area: C;
+          }
+
+          .TextBox {
+            grid-area: TBB;
+            display: flex;
+            align-items: center;
+
+            .Tmonto {
+              margin-right: 0.5rem;
+              font-size: 0.9rem;
+              color: $font-icon-text;
+              font-weight: bold;
+            }
+
+            .AddButton {
+              margin-left: 0.5rem;
+              display: flex;
+              align-items: center;
+              font-size: 1.5rem;
+              color: $main-green;
+              flex-direction: column;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+
+          .SubTotal {
+            grid-area: SBT;
+            font-size: 0.9rem;
+            color: $font-icon-text;
+            font-weight: bold;
+          }
+        }
+
+        .ReferenciaContainer {
+          .MontoBox {
+            height: 25px;
+          }
+        }
+      }
+    }
+
+    .CalcContainer {
+      grid-area: C;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      grid-template-columns: 3% 1fr 5.5%;
+      grid-template-rows: 6% 1fr 35.5%;
+      grid-template-areas:
+        ". . ."
+        ". C ."
+        ". MC .";
+
+      .CalcuFrame {
+        grid-area: C;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border: 3px solid $calc-frame;
+        border-radius: 10px;
+        padding: 8.2px;
+
+        .Calc {
+          display: grid;
+          overflow: hidden;
+          font-size: 2rem;
+          color: $calc-text;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          grid-gap: 1px;
+          grid-template-columns: 25% 25% 25% 25%;
+          grid-template-rows: 23.1% 15.38% 15.38% 15.38% 15.38% 1fr;
+          grid-template-areas:
+            "SC SC SC SC"
+            "CE ML PE DI"
+            "SE EI NI MU"
+            "FO FI SI SU"
+            "ON TW TH PL"
+            "CR CR DO EL";
+
+          .ScreenPiece {
+            grid-area: SC;
+            display: grid;
+            background: $calc-screen;
+            width: 100%;
+            height: 100%;
+            justify-content: end;
+            color: $calc-text;
+            grid-template-rows: 30% 1fr;
+            grid-template-columns: 70% 1fr;
+            grid-template-areas:
+              "F O"
+              "C C";
+
+            .Operator {
+              display: flex;
+              grid-area: O;
+              width: 100%;
+              height: 100%;
+              justify-content: flex-end;
+              margin-top: 0.3rem;
+              padding-right: 1.5rem;
+              font-size: 1rem;
+            }
+
+            .Number {
+              display: flex;
+              grid-area: C;
+              padding-right: 1rem;
+              justify-content: flex-end;
+              font-family: "Wallpoet";
+              width: 100%;
+              height: 100%;
+              margin-top: 0.5rem;
+              font-size: 2.3rem;
+            }
+
+            .FirstOper {
+              grid-area: F;
+              width: 100%;
+              height: 100%;
+              font-family: "Wallpoet";
+              justify-content: flex-start;
+              margin-top: 0.3rem;
+              padding-left: 1.5rem;
+              font-size: 1rem;
+            }
+
+            &:hover {
+              cursor: auto;
+            }
+          }
+
+          .ClearScreen {
+            grid-area: CE;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .MoreLess {
+            grid-area: ML;
+            @extend .CalcItems;
+            @extend .Hovering;
+            font-size: 1.2rem;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Percentage {
+            grid-area: PE;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Divition {
+            grid-area: DI;
+            @extend .CalcItems;
+            background-color: $secundary-green;
+            color: $white-text;
+            font-size: 1.7rem;
+            width: 100%;
+            height: 100%;
+
+            &:hover,
+            &:active {
+              background: lighten($secundary-green, $bright) !important;
+              cursor: pointer;
+            }
+          }
+
+          .Seven {
+            grid-area: SE;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Eight {
+            grid-area: EI;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Nine {
+            grid-area: NI;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Multiplication {
+            grid-area: MU;
+            @extend .CalcItems;
+            background-color: $secundary-green;
+            color: $white-text;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 100%;
+            height: 100%;
+
+            &:hover,
+            &:active {
+              background: lighten($secundary-green, $bright) !important;
+              cursor: pointer;
+            }
+          }
+
+          .Four {
+            grid-area: FO;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Five {
+            grid-area: FI;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Six {
+            grid-area: SI;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Substraction {
+            grid-area: SU;
+            background-color: $secundary-green;
+            text-align: center;
+            color: $white-text;
+            font-size: 2rem;
+            font-weight: normal;
+            width: 100%;
+            height: 100%;
+
+            &:hover,
+            &:active {
+              background: lighten($secundary-green, $bright) !important;
+              cursor: pointer;
+            }
+          }
+
+          .One {
+            grid-area: ON;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Two {
+            grid-area: TW;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Three {
+            grid-area: TH;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Sum {
+            grid-area: PL;
+            @extend .CalcItems;
+            background-color: $secundary-green;
+            color: $white-text;
+            font-size: 2rem;
+            font-weight: normal;
+            width: 100%;
+            height: 100%;
+
+            &:hover,
+            &:active {
+              background: lighten($secundary-green, $bright) !important;
+              cursor: pointer;
+            }
+          }
+
+          .Cero {
+            grid-area: CR;
+            @extend .CalcItems;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Dot {
+            grid-area: DO;
+            text-align: center;
+            @extend .Hovering;
+            background-color: $main-green;
+            width: 100%;
+            height: 100%;
+          }
+
+          .Equal {
+            grid-area: EL;
+            @extend .CalcItems;
+            background-color: $secundary-green;
+            color: $white-text;
+            font-size: 2rem;
+            font-weight: normal;
+            width: 100%;
+            height: 100%;
+
+            &:hover,
+            &:active {
+              background: lighten($secundary-green, $bright) !important;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .MoreControls {
+        grid-area: MC;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+        margin-top: 20px;
+        font-weight: bold;
+        color: $gray-text;
+
+        .ConsumoInteno {
+          display: flex;
+          margin-bottom: 20px;
+        }
+
+        .Gratuito {
+          display: flex;
+        }
+
+        .Password {
+          height: 20px;
+          width: 100px;
+          font-weight: bold;
+          outline: none;
+          border-style: none;
+          background: #dadee9;
+          color: $gray-text;
+          padding-left: 3px;
+        }
+      }
+    }
+  }
+
+  .MontoBox {
+    padding-left: 1px;
+    background: $color-text;
+    outline: none;
+    border-style: none;
+    border-radius: 2px;
+    height: 100%;
+    font-size: 0.8rem;
+    color: $font-icon-text;
+    font-weight: bold;
+  }
+}
+
+input {
+  outline: none;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

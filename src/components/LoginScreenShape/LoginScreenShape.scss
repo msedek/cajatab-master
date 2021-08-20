@@ -1,0 +1,62 @@
+@import "../../_variables.scss";
+
+.Shape {
+  display: grid;
+  height: $base-percent * 100;
+  box-sizing: border-box;
+  border-radius: $round-border;
+  background: #d9dadc;
+  overflow: hidden;
+  grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 4fr [col-2-end];
+  grid-template-rows: [row-1-start] $base-percent * 30 [row-1-end row-2-start] $base-percent * 40 [row-2-end row-3-start] $base-percent * 30 [row-3-end];
+  grid-template-areas:
+    ". ."
+    "I T"
+    ". .";
+}
+
+.Fondo {
+  margin: $base-rem * 0.4;
+  box-sizing: border-box;
+  background: $login-circle;
+  border-radius: $base-percent * 50;
+  grid-column-start: col-1-start;
+  grid-column-end: col-1-end;
+  grid-row-start: row-1-start;
+  grid-row-end: row-3-end;
+}
+
+.Icon {
+  display: flex;
+  grid-area: I;
+  color: $font-awesome-text;
+  padding: 0px;
+  margin: 0px;
+  align-self: center;
+  justify-self: center;
+}
+
+.Text {
+  display: grid;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+  grid-area: T;
+  grid-template-columns: $base-percent * 5 $base-percent * 95;
+  grid-template-areas: ". T";
+}
+
+.TextInput {
+  box-sizing: border-box;
+  grid-area: T;
+  height: $base-percent * 100;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background: inherit;
+  font-size: $base-rem * 1.2;
+  align-self: center;
+
+  &:focus {
+    outline: none;
+  }
+}

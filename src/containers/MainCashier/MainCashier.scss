@@ -1,0 +1,143 @@
+@import "../../_variables.scss";
+
+.Mybutt {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.CashierContainer {
+  font-family: inherit;
+  display: grid;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+  grid-template-columns: $base-percent * 60 $base-percent * 40;
+  grid-template-rows: $base-percent * 70 $base-percent * 30;
+  grid-template-areas:
+    "CA ME"
+    "TE BU";
+
+  .Carousel {
+    overflow-y: auto;
+    display: grid;
+    grid-area: CA;
+    color: $white-text;
+    height: 463px;
+    font-weight: bold;
+    font-size: $base-rem * 1.1;
+    grid-template-columns: $base-percent * 5 $base-percent * 82;
+    grid-template-rows: $base-percent * 8 $base-percent * 82 1fr;
+    grid-template-areas:
+      ". . "
+      ". C"
+      ". .";
+
+    .CarouselChild {
+      grid-area: C;
+      align-self: center;
+      height: $base-percent * 100;
+    }
+  }
+
+  .Messages {
+    grid-area: ME;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: grid;
+    font-family: inherit;
+    min-height: $base-percent * 100;
+    width: $base-percent * 100;
+    font-size: $base-rem * 1.1;
+    grid-template-columns: $base-percent * 8.5 $base-percent * 83 1fr;
+    grid-template-rows: $base-percent * 10 $base-percent * 50 1fr;
+    grid-template-areas:
+      ". T ."
+      ". M ."
+      ". D .";
+
+    .TitleMessage {
+      grid-area: T;
+      position: relative;
+      justify-self: center;
+      transform: translateY($base-percent * 60);
+      min-height: $base-percent * 90;
+      width: $base-percent * 45;
+      z-index: 1;
+    }
+
+    .MessagesChild {
+      overflow-y: auto;
+      grid-area: M;
+      display: flex;
+      justify-self: center;
+      width: $base-percent * 100;
+      height: 206px;
+      border-radius: 20px;
+      box-sizing: border-box;
+      background: $background;
+      box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.6);
+    }
+
+    .Documentos {
+      overflow-y: auto;
+      grid-area: D;
+      display: flex;
+      height: 160px;
+      border-radius: 20px;
+      background: $background;
+      padding: 15px;
+      box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .HighLights {
+    display: grid;
+    font-family: inherit;
+    grid-area: TE;
+    color: white;
+    height: $base-percent * 100;
+    font-weight: bold;
+    font-size: $base-rem * 1.1;
+    grid-template-columns: $base-percent * 5.6 $base-percent * 82;
+    grid-template-rows: $base-percent * 25 $base-percent * 82 1fr;
+    grid-template-areas:
+      ". ."
+      ". H"
+      ". .";
+
+    .HighLightChild {
+      grid-area: H;
+      align-self: center;
+      height: $base-percent * 100;
+    }
+  }
+
+  .Buttons {
+    display: grid;
+    grid-area: BU;
+    height: $base-percent * 100;
+    width: $base-percent * 100;
+    grid-template-columns: 30% 1f;
+    grid-template-rows: $base-percent * 27 $base-percent * 40 1fr;
+    grid-template-areas:
+      ". ."
+      "RR S"
+      ". .";
+
+    .OverView {
+      grid-area: RR;
+      display: flex;
+      padding-top: 20px;
+      flex-direction: column;
+      width: 100px;
+      height: 90px;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .Exit {
+      grid-area: S;
+    }
+  }
+}

@@ -1,0 +1,286 @@
+@import "../../../_variables.scss";
+
+.Container {
+  display: grid;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+  grid-template-rows: $base-percent * 30 $base-percent * 37.5 5% 1fr;
+  grid-template-columns: $base-percent * 17 1fr;
+  grid-template-areas:
+    ". ."
+    ". T"
+    ". ."
+    ". R";
+
+  .Totals {
+    grid-area: T;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 95% 1fr;
+    grid-template-areas:
+      "RU ."
+      "NO ."
+      "DI ."
+      "EC ."
+      "PRE .";
+
+    .RucContainer {
+      overflow: hidden;
+      grid-area: RU;
+      display: grid;
+      width: 100%;
+      height: 100%;
+      align-content: center;
+      grid-template-columns: 29% 1fr 5% 25%;
+      grid-template-areas: "RUC NUM . BRU";
+
+      .Ruc {
+        grid-area: RUC;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        color: $white-text;
+        text-align: center;
+        grid-template-columns: 60% 1fr;
+        grid-template-areas: ". LA";
+
+        .Label {
+          grid-area: LA;
+          height: 100%;
+          width: 100%;
+          border-radius: 3px;
+          background: $secundary-green;
+        }
+      }
+
+      .NumRuc {
+        grid-area: NUM;
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        outline: none;
+        border-style: none;
+        background: #dadee9;
+        margin-left: 5px;
+        color: $gray-text;
+      }
+
+      .BuscarRuc {
+        grid-area: BRU;
+        -webkit-appearance:none;
+        font-weight: bold;
+        outline: none;
+        border-style: none;
+        background: $secundary-green;
+        color: $white-text;
+        border-radius: 3px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .NameContainer {
+      overflow: hidden;
+      grid-area: NO;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      align-content: center;
+      grid-template-columns: 29% 1fr;
+      grid-template-areas: "N L";
+
+      .Name {
+        grid-area: N;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        color: $white-text;
+        text-align: center;
+        grid-template-columns: 30% 1fr;
+        grid-template-areas: ". LA";
+
+        .LabelName {
+          grid-area: LA;
+          height: 100%;
+          width: 100%;
+          border-radius: 3px;
+          background: $secundary-green;
+        }
+      }
+
+      .ActualName {
+        grid-area: L;
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        outline: none;
+        border-style: none;
+        background: #dadee9;
+        margin-left: 5px;
+        color: $gray-text;
+      }
+    }
+
+    .DirectionContainer {
+      overflow: hidden;
+      grid-area: DI;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      align-content: center;
+      grid-template-columns: 29% 1fr;
+      grid-template-areas: "D A";
+
+      .Dir {
+        grid-area: D;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        color: $white-text;
+        text-align: center;
+        grid-template-columns: 10% 1fr;
+        grid-template-areas: ". LA";
+
+        .LabelDir {
+          grid-area: LA;
+          height: 100%;
+          width: 100%;
+          border-radius: 3px;
+          background: $secundary-green;
+        }
+      }
+
+      .ActualDir {
+        grid-area: A;
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        outline: none;
+        border-style: none;
+        background: #dadee9;
+        margin-left: 5px;
+        color: $gray-text;
+      }
+    }
+
+    .emailContainer {
+      overflow: hidden;
+      grid-area: EC;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      align-content: center;
+      grid-template-columns: 29% 1fr;
+      grid-template-areas: "DE AE";
+
+      .mail {
+        grid-area: DE;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        color: $white-text;
+        text-align: center;
+        grid-template-columns: 40% 1fr;
+        grid-template-areas: ". LAE";
+
+        .LabelMail {
+          grid-area: LAE;
+          height: 100%;
+          width: 100%;
+          border-radius: 3px;
+          background: $secundary-green;
+        }
+      }
+
+      .email {
+        grid-area: AE;
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        outline: none;
+        border-style: none;
+        background: #dadee9;
+        margin-left: 5px;
+        color: $gray-text;
+      }
+    }
+
+    .preCuentaContainer {
+      grid-area: PRE;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Radios {
+    grid-area: R;
+
+    .FactStyle {
+      outline: none;
+      margin-left: $base-rem * 1.9;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .BolStyle {
+      outline: none;
+      margin-left: $base-rem * 1.4;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .Factura {
+      margin-left: $base-rem * 1.25;
+      color: $gray-text;
+      font-weight: bold;
+      font-size: $base-rem * 0.9;
+    }
+
+    .Boleta {
+      margin-left: $base-rem * 1.9;
+      color: $gray-text;
+      font-weight: bold;
+      font-size: $base-rem * 0.9;
+    }
+
+    input[type="radio"]:after {
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      top: -2px;
+      left: -1px;
+      position: relative;
+      background-color: #d1d3d1;
+      content: "";
+      display: inline-block;
+      visibility: visible;
+      border: 2px solid white;
+    }
+
+    input[type="radio"]:checked:after {
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      top: -2px;
+      left: -1px;
+      position: relative;
+      background-color: $radio-color;
+      content: "";
+      display: inline-block;
+      visibility: visible;
+      border: 2px solid white;
+    }
+  }
+}

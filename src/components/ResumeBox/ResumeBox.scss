@@ -1,0 +1,61 @@
+@import '../../_variables.scss';
+
+.Container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $white-text;
+  grid-template-rows: 8% 74% 1fr;
+  grid-template-areas: 'T'
+                       'C'
+                       'F';
+
+  .Title {
+    grid-area: T;
+    position: relative;
+    justify-self: center;
+    width: 44%;
+    height: 180%;
+    transform: translateY($base-percent * 12);
+  }
+
+  .Content {
+    grid-area: C;
+    width: 100%;
+    height: 100%;
+    background: $dark-line;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .Footer {
+    grid-area: F;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+    align-content: center;
+    color: $secundary-green;
+    box-shadow: 1px 4px 8px -2px #888;
+    background: $dark-grey-resume;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    grid-template-columns: 9.5% 44% 15.5% 1fr;
+    grid-template-areas: '. T . M';
+
+    .FooterTotal {
+      grid-area: T;
+      height: 100%;
+      width: 100%;
+    }
+
+    .FooterMoney {
+      grid-area: M;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

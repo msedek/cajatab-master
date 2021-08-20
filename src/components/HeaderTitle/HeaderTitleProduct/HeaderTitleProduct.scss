@@ -1,0 +1,48 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.ConfGeneral {
+  background: $main-green;
+  align-content: center;
+  justify-content: center;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ZoneTitle {
+  @extend .GridCommons;
+  color: $font-white;
+  font-weight: bold;
+  grid-template-areas:
+    ". . ."
+    ". TL .";
+
+  .HeaderContaier {
+    @extend .GridCommons;
+    grid-area: TL;
+    grid-gap: 2.8px;
+    grid-template-columns: 63.5% 1fr;
+    grid-template-areas: "IN SE";
+
+    .ItemName {
+      @extend .GridCommons;
+      @extend .ConfGeneral;
+      grid-area: IN;
+      border-top-left-radius: 10px;
+    }
+
+    .Select {
+      @extend .GridCommons;
+      @extend .ConfGeneral;
+      grid-area: SE;
+      border-top-right-radius: 10px;
+    }
+  }
+}

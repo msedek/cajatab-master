@@ -1,0 +1,57 @@
+@import "../../_variables.scss";
+
+.MainContainer {
+  display: grid;
+  min-width: 1360px;
+  min-height: 735px;
+  grid-template-columns: 100%;
+  grid-template-areas: "U";
+}
+
+/* .Media {
+  @media (min-width: 1320px), (min-height: 850px) {
+    margin: $base-rem * 2 auto;
+    width: 1440px;
+    height: 900px;
+  }
+} */
+
+.div__back {
+  grid-area: U;
+  display: grid;
+  min-width: 1360px;
+  min-height: 735px;
+  height: 735px;
+  box-sizing: border-box;
+  background: $frame-background;
+  grid-template-columns: $base-percent * 3.75 $base-percent * 92.5 $base-percent * 3.75;
+  grid-template-rows: $base-percent * 12 $base-percent * 82 $base-percent * 6;
+  grid-template-areas:
+    "T T T"
+    ". P ."
+    ". . .";
+
+  .TopBar {
+    grid-area: T;
+    width: 100%;
+    height: 100%;
+  }
+
+  .Card {
+    display: grid;
+    height: $base-percent * 100;
+    width: 100%;
+    box-sizing: border-box;
+    grid-area: P;
+    border-radius: 8px;
+    background: $frame-card;
+    overflow: hidden;
+  }
+}
+
+.BackDrop {
+  grid-area: U;
+  min-width: 1360px;
+  min-height: 735px;
+  background: rgba(43, 44, 44, 0.8);
+}

@@ -1,0 +1,42 @@
+@import "../../_variables.scss";
+
+.ParentTab {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 100%;
+  grid-template-areas: "R";
+
+  .LabelTriangle {
+    grid-area: R;
+    display: flex;
+    height: $base-percent * 100;
+    width: $base-percent * 100;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    padding-right: 4.4rem;
+    border-top-left-radius: 12px;
+    background-position: 100% 2000px;
+
+    span {
+      color: $white-text;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+  }
+
+  .LabelTriangle:after {
+    grid-area: R;
+    content: "";
+    top: -90.5%;
+    left: 72.4%;
+    height: 250%;
+    width: 1%;
+    background: $white-text;
+    transform: rotate(127.5deg);
+    position: absolute;
+    border-top-left-radius: 12px;
+    pointer-events: none;
+  }
+}

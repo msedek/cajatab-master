@@ -1,0 +1,67 @@
+@import "../../../_variables.scss";
+
+.Container {
+  display: grid;
+  height: $base-percent * 100;
+  width: $base-percent * 100;
+  color: #4c5663;
+  grid-template-columns: $base-percent * 7 $base-percent * 17 $base-percent * 7.5 $base-percent * 17 $base-percent * 7 1fr;
+  grid-template-rows: $base-percent * 35 1fr;
+  grid-template-areas:
+    "L TL O TO R TR"
+    "C TC P TP U TU";
+
+  .Libre {
+    grid-area: L;
+  }
+
+  .TextLibre {
+    margin-top: $base-percent * 10;
+    grid-area: TL;
+  }
+
+  .Ocupada {
+    grid-area: O;
+  }
+
+  .TextOcupada {
+    margin-top: $base-percent * 10;
+    grid-area: TO;
+  }
+
+  .Reservada {
+    grid-area: R;
+  }
+
+  .TextReservada {
+    margin-top: $base-percent * 3;
+    grid-area: TR;
+  }
+
+  .Cobrar {
+    grid-area: C;
+  }
+
+  .TextCobrar {
+    margin-top: $base-percent * 5;
+    grid-area: TC;
+  }
+
+  .Pagar {
+    grid-area: P;
+  }
+
+  .TextPagar {
+    margin-top: $base-percent * 5;
+    grid-area: TP;
+  }
+
+  .Unir {
+    grid-area: U;
+  }
+
+  .TextUnidas {
+    margin-top: $base-percent * 2;
+    grid-area: TU;
+  }
+}

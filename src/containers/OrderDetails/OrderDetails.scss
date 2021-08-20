@@ -1,0 +1,269 @@
+@import "../../_variables.scss";
+
+.Hovering {
+  &:hover {
+    filter: brightness($base-percent * 110);
+    cursor: pointer;
+  }
+}
+
+.ConfBox {
+  background: $color-text;
+  outline: none;
+  border-style: none;
+  border-radius: 1px;
+  font-size: 0.9rem;
+  color: $font-icon-text;
+  font-weight: bold;
+}
+
+.OrderContainer {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 10.4% 64% 3% 1fr;
+  grid-template-areas:
+    "HC"
+    "IC"
+    "."
+    "CO";
+
+  .HeaderContainer {
+    grid-area: HC;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    .ItemTitle {
+      color: $gray-text;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.3rem;
+      position: relative;
+      transform: translateY(-19%);
+    }
+  }
+
+  .ItemContainer {
+    grid-area: IC;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 5.8% 40.1% 11.9% 1fr 6.6%;
+    grid-template-areas: ". IC . CF .";
+
+    .ImageContainer {
+      grid-area: IC;
+      display: grid;
+      width: 100%;
+      height: 100%;
+      grid-template-columns: 79.2% 1fr;
+      grid-template-rows: 94.1% 1fr;
+      grid-template-areas:
+        ". AC"
+        ". PC";
+
+      .ActualImage {
+        grid-column-start: 1;
+        grid-column-end: AC;
+        grid-row-start: 1;
+        grid-row-end: PC;
+        height: 100%;
+        width: 100%;
+      }
+
+      .PriceText {
+        display: flex;
+        grid-area: PC;
+        width: 100%;
+        height: 100%;
+        color: $gray-text;
+        position: relative;
+        background: $frame-card;
+        z-index: 1;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+    }
+
+    .ConfigContainer {
+      display: grid;
+      grid-area: CF;
+      width: 100%;
+      height: 100%;
+      grid-template-rows: 9.4% 6.6% 54.4% 2% 1fr;
+      grid-template-areas:
+        "DT"
+        "."
+        "CC"
+        "."
+        "QC";
+
+      .Description {
+        grid-area: DT;
+        width: 100%;
+        height: 100%;
+        color: $gray-text;
+      }
+
+      .ConfigContainer {
+        display: grid;
+        grid-area: CC;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 50.4% 11.5% 1fr;
+        grid-template-rows: 45% 10% 1fr;
+        grid-template-areas:
+          "AC . IC"
+          ". . ."
+          "TC . AD";
+
+        .OptionOne {
+          grid-area: AC;
+          height: 100%;
+          width: 100%;
+        }
+
+        .OptionTwo {
+          grid-area: IC;
+          height: 100%;
+          width: 100%;
+        }
+
+        .OptionThree {
+          grid-area: TC;
+          height: 100%;
+          width: 100%;
+        }
+
+        .OptionFour {
+          grid-area: AD;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .QuantContainer {
+        grid-area: QC;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        color: $main-green;
+        grid-template-columns: 5.4% 2% 5.4% 2% 10% 1fr;
+        grid-template-rows: 15% 5% 8.1% 15% 1fr;
+        grid-template-areas:
+          "Q . . . . C"
+          ". . . . . C"
+          "M . N . P C"
+          ". . . . . C"
+          "NO NO NO NO NO NO";
+
+        .QuanTitle {
+          grid-area: Q;
+          color: $gray-text;
+          font-weight: bold;
+        }
+
+        .Minus {
+          grid-area: M;
+          font-size: 1.25rem;
+          margin-left: 0.35rem;
+          @extend .Hovering;
+        }
+
+        .Number {
+          text-align: center;
+          grid-area: N;
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+
+        .Plus {
+          grid-area: P;
+          font-size: 1.25rem;
+          @extend .Hovering;
+        }
+
+        .Directo {
+          grid-area: C;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          flex-direction: row;
+
+          .Check {
+            margin-right: 10px;
+          }
+
+          .Text {
+            font-size: 0.9rem;
+            color: $font-icon-text;
+            font-weight: bold;
+          }
+
+          input[type="checkbox"]:after {
+            width: 13px;
+            height: 13px;
+            position: relative;
+            content: "";
+            display: inline-block;
+            background-color: $color-text;
+            visibility: visible;
+            border: 2px solid $main-green;
+            border-radius: 1px;
+          }
+
+          input[type="checkbox"]:checked:after {
+            width: 13px;
+            height: 13px;
+            position: relative;
+            content: "";
+            background-color: $main-green;
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid $main-green;
+            border-radius: 1px;
+          }
+        }
+
+        .Notas {
+          grid-area: NO;
+          display: flex;
+          flex-direction: column;
+          min-height: 100%;
+          align-items: flex-start;
+          justify-content: flex-end;
+
+          .TextBox {
+            @extend .ConfBox;
+            width: 280px;
+            height: 25px;
+            padding: 0;
+            padding-left: 3px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .OrderControl {
+    grid-area: CO;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+input {
+  outline: none;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

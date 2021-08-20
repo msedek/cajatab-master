@@ -1,0 +1,732 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.Border {
+  display: flex;
+  font-size: 0.88rem;
+  font-weight: bold;
+  align-content: center;
+  justify-content: center;
+  border-right: 2px solid $font-white;
+}
+
+.ConfText {
+  font-weight: bold;
+  font-size: 0.88rem;
+  color: $font-awesome-icono;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ConfBox {
+  background: $color-text;
+  outline: none;
+  border-style: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: $font-icon-text;
+  font-weight: bold;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+
+  .ContainerTop {
+    @extend .GridCommons;
+    max-height: 310px;
+    height: 310px;
+    grid-template-columns: 33.33% 33.33% 1fr;
+    grid-template-rows: 21% 19% 1fr;
+    grid-template-areas:
+      "ZD ZD2 ZD3"
+      ". . ."
+      "ZL ZL2 ZL3";
+
+    .ZoneData {
+      @extend .GridCommons;
+      grid-area: ZD;
+      grid-template-columns: 5% 75% 20%;
+      grid-template-rows: 10% 1fr 10%;
+      grid-template-areas:
+        ". . ."
+        ". IN BTN"
+        ". . .";
+
+      .Buttons {
+        display: flex;
+        width: 100%;
+        grid-area: BTN;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+      }
+
+      .Information {
+        @extend .GridCommons;
+        grid-area: IN;
+        grid-template-columns: 30% 2fr 5%;
+        grid-template-areas: "DA TB .";
+
+        .Data {
+          display: flex;
+          flex-direction: column;
+          @extend .ConfText;
+          grid-area: DA;
+
+          .Text2 {
+            margin-top: 0.45rem;
+          }
+
+          .Text3 {
+            margin-top: 1.2rem;
+          }
+
+          .Text1 {
+            margin-top: 1.2rem;
+          }
+        }
+
+        .TextBox {
+          @extend .GridCommons;
+          grid-area: TB;
+          grid-row-gap: 0.3rem;
+          grid-template-rows: 30% 30% 30%;
+          grid-template-areas:
+            "TB2"
+            "TB3"
+            "TB1";
+
+          .TextBox2 {
+            @extend .ConfBox;
+            grid-area: TB2;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+
+          .TextBox3 {
+            @extend .ConfBox;
+            grid-area: TB3;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+
+          .TextBox1 {
+            @extend .ConfBox;
+            grid-area: TB1;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .ZoneData2 {
+      @extend .GridCommons;
+      grid-area: ZD2;
+      grid-template-columns: 5% 75% 20%;
+      grid-template-rows: 10% 1fr 10%;
+      grid-template-areas:
+        ". . ."
+        ". IN BTN"
+        ". . .";
+
+      .Buttons2 {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        grid-area: BTN;
+        align-content: center;
+        align-items: center;
+      }
+
+      .Information2 {
+        @extend .GridCommons;
+        grid-area: IN;
+        grid-template-columns: 30% 2fr 5%;
+        grid-template-areas: "DA TB .";
+
+        .Data2 {
+          display: flex;
+          @extend .ConfText;
+          grid-area: DA;
+          align-items: center;
+        }
+
+        .TextBox2 {
+          display: flex;
+          grid-area: TB;
+          align-items: center;
+
+          .TextBox32 {
+            @extend .ConfBox;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .ZoneData3 {
+      @extend .GridCommons;
+      grid-area: ZD3;
+      grid-template-columns: 5% 75% 20%;
+      grid-template-rows: 10% 1fr 10%;
+      grid-template-areas:
+        ". . ."
+        ". IN BTN"
+        ". . .";
+
+      .Buttons3 {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        grid-area: BTN;
+        align-content: center;
+        align-items: center;
+      }
+
+      .Information3 {
+        @extend .GridCommons;
+        grid-area: IN;
+        grid-template-columns: 30% 2fr 5%;
+        grid-template-areas: "DA TB .";
+
+        .Data3 {
+          display: flex;
+          @extend .ConfText;
+          grid-area: DA;
+          align-items: center;
+          justify-content: flex-end;
+          margin-right: 5px;
+        }
+
+        .TextBox23 {
+          display: flex;
+          grid-area: TB;
+          align-items: center;
+
+          .TextBox33 {
+            @extend .ConfBox;
+            grid-area: TB3;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .ZoneList {
+      display: flex;
+      grid-area: ZL;
+
+      .ZoneCenterCoste {
+        @extend .GridCommons;
+        grid-template-rows: 15% 5% 1fr;
+        grid-template-areas:
+          "TI"
+          "."
+          "LI";
+
+        .ZoneTitle {
+          @extend .SubGrid;
+          grid-area: TI;
+        }
+
+        .List {
+          @extend .SubGrid;
+          grid-area: LI;
+        }
+      }
+    }
+
+    .ZoneList2 {
+      display: flex;
+      grid-area: ZL2;
+
+      .ZoneCenterCoste2 {
+        @extend .GridCommons;
+        grid-template-rows: 15% 5% 1fr;
+        grid-template-areas:
+          "TI2"
+          "."
+          "LI2";
+
+        .ZoneTitle {
+          @extend .SubGrid;
+          grid-area: TI2;
+        }
+
+        .List {
+          @extend .SubGrid;
+          grid-area: LI2;
+        }
+      }
+    }
+
+    .ZoneList3 {
+      display: flex;
+      grid-area: ZL3;
+
+      .ZoneCenterCoste3 {
+        @extend .GridCommons;
+        grid-template-rows: 15% 5% 1fr;
+        grid-template-areas:
+          "TI3"
+          "."
+          "LI3";
+
+        .ZoneTitle {
+          @extend .SubGrid;
+          grid-area: TI3;
+        }
+
+        .List {
+          @extend .SubGrid;
+          grid-area: LI3;
+        }
+      }
+    }
+
+    .DeleteDescuento {
+      grid-area: BO1;
+      display: flex;
+      color: $main-green;
+      flex-direction: row;
+
+      .ExitButton {
+        display: flex;
+        width: 20%;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        .Text {
+          font-size: 0.9rem;
+          color: $font-icon-text;
+          font-weight: bold;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .DeleteButton {
+        display: flex;
+        width: 77%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .Text {
+          font-size: 0.7rem;
+          color: $font-icon-text;
+          font-weight: bold;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .DeletePago {
+      grid-area: BO2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: $main-green;
+      flex-direction: column;
+
+      .Text {
+        font-size: 0.9rem;
+        color: $font-icon-text;
+        font-weight: bold;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .DeleteMesa {
+      grid-area: BO3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: $main-green;
+      flex-direction: column;
+
+      .Text {
+        font-size: 0.9rem;
+        color: $font-icon-text;
+        font-weight: bold;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .ContainerBottom {
+    @extend .GridCommons;
+    max-height: 310px;
+    height: 310px;
+    grid-template-columns: 33.33% 33.33% 1fr;
+    grid-template-rows: 21% 19% 1fr;
+    grid-template-areas:
+      "ZD ZD2 VS"
+      ". . VS"
+      "ZL ZL2 VS";
+
+    .ZoneData {
+      @extend .GridCommons;
+      grid-area: ZD;
+      grid-template-columns: 5% 75% 20%;
+      grid-template-rows: 10% 1fr 10%;
+      grid-template-areas:
+        ". . ."
+        ". IN BTN"
+        ". . .";
+
+      .Buttons {
+        display: flex;
+        width: 100%;
+        grid-area: BTN;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+      }
+
+      .Information {
+        @extend .GridCommons;
+        grid-area: IN;
+        grid-template-columns: 30% 2fr 5%;
+        grid-template-areas: "DA TB .";
+
+        .Data {
+          display: flex;
+          flex-direction: column;
+          @extend .ConfText;
+          grid-area: DA;
+
+          .Text2 {
+            margin-top: 0.45rem;
+          }
+
+          .Text3 {
+            margin-top: 1.2rem;
+          }
+
+          .Text1 {
+            margin-top: 1.2rem;
+          }
+        }
+
+        .TextBox {
+          @extend .GridCommons;
+          grid-area: TB;
+          grid-row-gap: 0.3rem;
+          grid-template-rows: 30% 30% 30%;
+          grid-template-areas:
+            "TB2"
+            "TB3"
+            "TB1";
+
+          .TextBox2 {
+            @extend .ConfBox;
+            grid-area: TB2;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+
+          .TextBox3 {
+            @extend .ConfBox;
+            grid-area: TB3;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+
+          .TextBox1 {
+            @extend .ConfBox;
+            grid-area: TB1;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .ZoneData2 {
+      @extend .GridCommons;
+      grid-area: ZD2;
+      grid-template-columns: 5% 75% 20%;
+      grid-template-rows: 10% 1fr 10%;
+      grid-template-areas:
+        ". . ."
+        ". IN BTN"
+        ". . .";
+
+      .Buttons2 {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        grid-area: BTN;
+        align-content: center;
+        align-items: center;
+      }
+
+      .Information2 {
+        @extend .GridCommons;
+        grid-area: IN;
+        grid-template-columns: 30% 2fr 5%;
+        grid-template-areas: "DA TB .";
+
+        .Data {
+          display: flex;
+          flex-direction: column;
+          @extend .ConfText;
+          grid-area: DA;
+
+          .Text2 {
+            margin-top: 0.45rem;
+          }
+
+          .Text3 {
+            margin-top: 1.2rem;
+          }
+
+          .Text1 {
+            margin-top: 1.2rem;
+          }
+        }
+
+        .TextBox {
+          @extend .GridCommons;
+          grid-area: TB;
+          grid-row-gap: 0.3rem;
+          grid-template-rows: 30% 30% 30%;
+          grid-template-areas:
+            "TB2"
+            "TB3"
+            "TB1";
+
+          .TextBox2 {
+            @extend .ConfBox;
+            grid-area: TB2;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+
+          .TextBox3 {
+            @extend .ConfBox;
+            grid-area: TB3;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+
+          .TextBox1 {
+            /*  @extend .ConfBox; */
+            grid-area: TB1;
+            width: 100%;
+            height: 30px;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .ZoneList {
+      display: flex;
+      grid-area: ZL;
+
+      .ZoneCenterCoste {
+        @extend .GridCommons;
+        grid-template-rows: 15% 5% 1fr;
+        grid-template-areas:
+          "TI"
+          "."
+          "LI";
+
+        .ZoneTitle {
+          @extend .SubGrid;
+          grid-area: TI;
+        }
+
+        .List {
+          @extend .SubGrid;
+          grid-area: LI;
+        }
+      }
+    }
+
+    .ZoneList2 {
+      display: flex;
+      grid-area: ZL2;
+
+      .ZoneCenterCoste2 {
+        @extend .GridCommons;
+        grid-template-rows: 15% 5% 1fr;
+        grid-template-areas:
+          "TI2"
+          "."
+          "LI2";
+
+        .ZoneTitle {
+          @extend .SubGrid;
+          grid-area: TI2;
+        }
+
+        .List {
+          @extend .SubGrid;
+          grid-area: LI2;
+        }
+      }
+    }
+
+    .ZoneList3B {
+      display: flex;
+      grid-area: VS;
+      @extend .ConfText;
+      width: 100%;
+      flex-direction: column;
+      /*       justify-content: center; */
+      justify-items: center;
+      box-shadow: 0 4px 8px -2px #888;
+      padding: 10px;
+
+      h2 {
+        text-align: center;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+
+      .Switch {
+        display: flex;
+        margin-bottom: 10px;
+
+        .LabelSw {
+          margin-left: 10px;
+        }
+      }
+      .SettingButton {
+        width: 80px;
+        color: $white-text;
+        height: 35px;
+        box-shadow: 0 4px 8px -2px #888;
+        text-align: center;
+        border-radius: 5px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .ExitButton {
+        display: flex;
+
+        width: 80px;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        transform: translate(295px, 140px);
+
+        .Text {
+          font-size: 0.9rem;
+          color: $font-icon-text;
+          font-weight: bold;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .DeleteDescuento {
+      grid-area: BO1;
+      display: flex;
+      color: $main-green;
+      flex-direction: row;
+
+      .DeleteButton {
+        display: flex;
+        width: 77%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .Text {
+          font-size: 0.7rem;
+          color: $font-icon-text;
+          font-weight: bold;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .DeletePago {
+      grid-area: BO2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: $main-green;
+      flex-direction: column;
+
+      .Text {
+        font-size: 0.9rem;
+        color: $font-icon-text;
+        font-weight: bold;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .DeleteMesa {
+      grid-area: BO3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: $main-green;
+      flex-direction: column;
+
+      .Text {
+        font-size: 0.9rem;
+        color: $font-icon-text;
+        font-weight: bold;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

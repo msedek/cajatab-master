@@ -1,0 +1,20 @@
+@import "../../../_variables.scss";
+
+.Container {
+  display: grid;
+  min-height: $base-rem * 31.25;
+  width: $base-percent * 100;
+  grid-template-rows: $base-percent * 92 1fr;
+  grid-template-areas:
+    "M"
+    ".";
+}
+
+.MarginEmp {
+  grid-area: M;
+  display: flex;
+  min-height: $base-percent * 100;
+  flex-direction: column;
+  padding-top: $base-rem * 3;
+  overflow-y: auto;
+}

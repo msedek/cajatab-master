@@ -1,0 +1,21 @@
+@import '../../../_variables.scss';
+
+.Container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 33% 1fr 38%;
+  grid-template-rows: 30% 25% 1fr;
+  grid-template-areas: '. . .'
+                       '. S .'
+                       '. M .'
+                       '. . .';
+
+  .SingleCh {
+    grid-area: S;
+  }
+
+  .MultiCh {
+    grid-area: M;
+  }
+}

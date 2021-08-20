@@ -1,0 +1,299 @@
+@import '../../_variables.scss';
+
+.ResumeContainer {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 6.3% 26.4% 4.3% 56.6%;
+  grid-template-rows: 3.5% 1fr 3.8%;
+  grid-template-areas: '. . . . .'
+                       '. O . S .'
+                       '. . . . .';
+
+  .Options {
+    grid-area: O;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 30.4% 4.3% 30.4% 4.3% 30.4% 1fr;
+    grid-template-areas: 'I'
+                         'M1'
+                         'E'
+                         'M2'
+                         'C'
+                         'M3';
+
+    .Incomes { 
+      grid-area: I;
+      height: 100%;
+      width: 100%;
+    }
+
+    .Margin1 {
+      grid-area: M1;
+      height: 100%;
+      width: 100%;
+    }
+
+    .Expenses { 
+      grid-area: E;
+      height: 100%;
+      width: 100%;
+    }
+
+    .Margin2 {
+      grid-area: M2;
+      height: 100%;
+      width: 100%;
+    }
+
+    .Cards {
+      grid-area: C;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .Sales {
+    grid-area: S;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 59% 7% 1fr;
+    grid-template-areas: 'S'
+                         'M'
+                         'T';
+
+    .SalesBox {
+      grid-area: S;
+      display: grid;
+      width: 100%;
+      height: 100%;
+      grid-template-rows: 4.1% 17% 1fr;
+      grid-template-areas: 'T'
+                           'H'
+                           'C';
+
+      .Title {
+        grid-area: T;
+        display: flex;
+        box-sizing: content-box;
+        position: relative;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        color: $white-text;
+        font-weight: bold;
+        font-size: 1.2rem;
+        width: 20%;
+        height: 198%;
+        border-radius: 25px;
+        border: 4px solid $white-text;
+        transform: translateY($base-percent * -10);
+        background: $main-green;
+      }
+
+      .Header {
+        grid-area: H;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        color: $white-text;
+        font-weight: bold;
+        font-size: 0.8rem;
+        grid-column-gap: 1px;
+        grid-template-columns: 13.5% 9.5% 17.1% 10.6% 11.5% 11.5% 13% 1fr;
+        grid-template-areas: 'FE TI DO TO ME MO CL DC';
+
+        .Fecha {
+          grid-area: FE;
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+          height: 100%;
+          width: 100%;
+          border-top-left-radius: 12px;
+          background: $main-green;
+        }
+
+        .Tipo {
+          grid-area: TI;
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+          height: 100%;
+          width: 100%;
+          background: $main-green;
+        }
+
+        .Documento {
+          grid-area: DO;
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+          height: 100%;
+          width: 100%;
+          background: $main-green;
+        }
+
+        .Total {
+          grid-area: TO;
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+          height: 100%;
+          width: 100%;
+          background: $main-green;
+        }
+
+        .Mesa {
+          grid-area: ME;
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+          height: 100%;
+          width: 100%;
+          background: $main-green;
+        }
+
+        .Mozo {
+          grid-area: MO;
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+          height: 100%;
+          width: 100%;
+          background: $main-green;
+        }
+
+        .Cliente{
+          grid-area: CL;
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+          height: 100%;
+          width: 100%;
+          background: $main-green;
+        }
+
+        .Descuento{
+          grid-area: DC;
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+          height: 100%;
+          width: 100%;
+          border-top-right-radius: 12px;
+          background: $main-green;
+        }
+      }
+
+      .Content {
+        grid-area: C;
+        height: 100%;
+        width: 100%;
+        background: $dark-line;
+        box-shadow: 0 4px 8px -2px #888;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+     }
+    }
+
+    .Margin {
+      grid-area: M;
+      display: grid;
+      width: 100%;
+      height: 100%;
+    }
+
+    .Totals {
+      grid-area: T;
+      display: grid;
+      width: 100%;
+      height: 100%;
+      grid-template-columns: 44% 5.5%1fr;
+      grid-template-rows: 50% 1fr;
+      grid-template-areas: 'T1 . T2'
+                           'T1 . BU';
+
+      .Totals1 {
+        grid-area: T1;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-rows: 20% 7% 20% 7% 20% 7% 1fr;
+        grid-template-areas: 'TV'
+                             '.'
+                             'TI'
+                             '.'
+                             'TE'
+                             '.'
+                             'TC';
+
+        .SalesLeft {
+          grid-area: TV;
+          height: 100%;
+          width: 100%;
+        }
+
+        .Incomes{
+          grid-area: TI;
+          height: 100%;
+          width: 100%;
+        }
+
+        .Expenses {
+          grid-area: TE;
+          height: 100%;
+          width: 100%;
+        }
+
+        .Cards {
+          grid-area: TC;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .Totals2 {
+        grid-area: T2;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-rows: 40% 1fr;
+        grid-template-areas: 'TC'
+                             '.';
+
+        .Cashier{
+          grid-area: TC;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .Buttons {
+        grid-area: BU;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: 33% 33% 1fr;
+        grid-template-areas: 'P C E';
+
+        .ParcialClose {
+          grid-area: P;
+          padding-top: 0.2rem;
+        }
+
+        .CashRegister {
+          grid-area: C;
+          padding-top: 1rem;
+        }
+
+        .Exit {
+          grid-area: E;
+          padding-top: 0.2rem;
+        }
+      }
+    }
+  }
+}

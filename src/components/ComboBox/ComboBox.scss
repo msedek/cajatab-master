@@ -1,0 +1,53 @@
+@import "../../_variables.scss";
+
+.ContTypePay {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 100%;
+  grid-template-areas: "A";
+}
+
+.ComboConf {
+  grid-area: A;
+  border-radius: 20px;
+  color: $gray-text;
+  font: inherit;
+  font-weight: bold;
+  // font-size: 0.8rem;
+  outline: none;
+  border: none;
+  padding-left: 1rem;
+  padding-top: 2px;
+  appearance: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  /*   @media(min-width:$media-break-width) , (min-height:$media-break-height) {
+    background-position-x: 17.55rem;
+  } */
+}
+
+.ArrowConf {
+  align-self: center;
+  grid-area: A;
+  margin-left: auto;
+  color: $white-text;
+  // margin-right: 0.18rem;
+  // margin-bottom: 0.5rem;
+  // font-size: 1rem;
+}
+
+.ComboContainer {
+  @extend .ContTypePay;
+
+  .ComboCash {
+    @extend .ComboConf;
+  }
+
+  .Arrow {
+    @extend .ArrowConf;
+  }
+}
